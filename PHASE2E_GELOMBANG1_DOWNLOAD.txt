@@ -1,0 +1,130 @@
+PHASE 2E — GELOMBANG 1 CLEAN UPSTREAM
+Tanggal: 2026-10-15
+
+Tujuan:
+Memasang ulang plugin/theme yang memang dibutuhkan ke staging OJS bersih.
+JANGAN pasang ke public_html produksi aktif.
+
+ROOT STAGING:
+ /home/u278918108/domains/mydokumen.space/public_html_clean_ojs
+
+============================================================
+1. DEFAULT MANUSCRIPT
+============================================================
+Repo: pkp/defaultManuscript
+Tag: 1.0.2
+Release internal: 1.0.2.0
+Direct ZIP:
+https://codeload.github.com/pkp/defaultManuscript/zip/refs/tags/1.0.2
+
+Extract dan rename folder menjadi:
+defaultManuscript
+
+Tujuan:
+plugins/themes/defaultManuscript
+
+Dipakai oleh journal ID:
+1, 2, 4, 5, 17, 19
+
+============================================================
+2. BOOTSTRAP3
+============================================================
+Repo: pkp/bootstrap3
+Tag: 1.1.4
+Release internal: 1.1.4.0
+Direct ZIP:
+https://codeload.github.com/pkp/bootstrap3/zip/refs/tags/1.1.4
+
+Extract dan rename folder menjadi:
+bootstrap3
+
+Tujuan:
+plugins/themes/bootstrap3
+
+Dipakai oleh journal ID:
+10, 20
+
+Catatan:
+Ini sama dengan versi yang sedang ada pada source produksi lama.
+
+============================================================
+3. BACKUP
+============================================================
+Repo: pkp/backup
+Tag: v2_0_0-0
+Release internal: 2.0.0.0
+Direct ZIP:
+https://codeload.github.com/pkp/backup/zip/refs/tags/v2_0_0-0
+
+Extract dan rename folder menjadi:
+backup
+
+Tujuan:
+plugins/generic/backup
+
+============================================================
+4. KEYWORD CLOUD
+============================================================
+Repo: ali-sokhandan/ojs3-keywordcloud-plugin
+Tag: 1.0.0.1
+Release internal: 1.0.0.1
+Direct ZIP:
+https://codeload.github.com/ali-sokhandan/ojs3-keywordcloud-plugin/zip/refs/tags/1.0.0.1
+
+PENTING:
+Folder hasil extract JANGAN dibiarkan bernama panjang.
+Rename menjadi:
+keywordCloud
+
+Tujuan:
+plugins/blocks/keywordCloud
+
+Upstream README memang menginstruksikan folder:
+plugins/blocks/keywordCloud
+
+============================================================
+5. MOST READ
+============================================================
+Repo: ajnyga/mostRead
+Tag: 1.0.0.0
+Release internal: 1.0.0.0
+Direct ZIP:
+https://codeload.github.com/ajnyga/mostRead/zip/refs/tags/1.0.0.0
+
+Extract dan rename folder menjadi:
+mostRead
+
+Tujuan:
+plugins/blocks/mostRead
+
+============================================================
+URUTAN PASANG
+============================================================
+1. Download semua ZIP di atas.
+2. Extract masing-masing di komputer atau folder sementara hosting.
+3. Rename folder sesuai nama final.
+4. Upload HANYA ke staging:
+   public_html_clean_ojs/plugins/...
+5. Jangan menyalin plugin lama produksi.
+6. Jangan menyalin .htaccess lama.
+7. Jangan buka staging sebelum semua selesai.
+8. Jangan menjalankan upgrade database.
+
+JANGAN DIBAWA:
+- themes/healthSciences
+- themes/classic
+- themes/default-child
+- themes/oldGregg
+- generic/translator
+
+DITUNDA UNTUK AUDIT LANJUT:
+- generic/browseBySection
+- generic/customHeader
+
+SETELAH SELESAI:
+Kirim screenshot isi folder berikut:
+- plugins/themes/defaultManuscript
+- plugins/themes/bootstrap3
+- plugins/generic/backup
+- plugins/blocks/keywordCloud
+- plugins/blocks/mostRead
