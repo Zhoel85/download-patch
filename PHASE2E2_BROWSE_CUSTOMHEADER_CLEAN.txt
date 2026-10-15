@@ -1,0 +1,88 @@
+PHASE 2E-2 — CLEAN HISTORICAL SOURCE
+Tanggal: 2026-10-15
+
+Tujuan:
+Mengambil sumber bersih untuk dua plugin yang aktif di database tetapi versinya lama:
+- browseBySection 0.1.0.0
+- customHeader 1.0.0.0
+
+JANGAN copy folder lama produksi.
+
+============================================================
+1. BROWSE BY SECTION
+============================================================
+Repo resmi:
+https://github.com/pkp/browseBySection
+
+Versi produksi:
+0.1.0.0
+
+Commit resmi PKP yang masih berisi release 0.1.0.0:
+b710389c879d913b4000df10f26c9e5b6effac96
+
+Direct ZIP:
+https://codeload.github.com/pkp/browseBySection/zip/b710389c879d913b4000df10f26c9e5b6effac96
+
+Setelah extract, rename folder menjadi:
+browseBySection
+
+Tujuan staging:
+public_html_clean_ojs/plugins/generic/browseBySection
+
+Catatan:
+Commit berikutnya 5ffa55522563ef42a263e9f4552995d25e928e79
+mengubah version.xml dari 0.1.0.0 menjadi 1.0.0.0.
+Jadi parent commit di atas adalah baseline resmi yang paling cocok dengan versi produksi.
+
+============================================================
+2. CUSTOM HEADER
+============================================================
+Repo resmi:
+https://github.com/pkp/customHeader
+
+Versi produksi:
+1.0.0.0
+
+Commit resmi PKP yang masih berisi release 1.0.0.0:
+3908959cb5d4a8ca7f4c7c2aceda941b11bcbc8f
+
+Direct ZIP:
+https://codeload.github.com/pkp/customHeader/zip/3908959cb5d4a8ca7f4c7c2aceda941b11bcbc8f
+
+Setelah extract, rename folder menjadi:
+customHeader
+
+Tujuan staging:
+public_html_clean_ojs/plugins/generic/customHeader
+
+Catatan:
+Commit berikutnya 4b3e9f7c8097238cf8d9163651d6eba0d737d395
+mengubah version.xml dari 1.0.0.0 menjadi 1.0.1.0.
+Jadi parent commit di atas adalah baseline resmi yang paling cocok dengan versi produksi.
+
+============================================================
+VERIFIKASI SETELAH PASANG
+============================================================
+Pastikan struktur akhir:
+
+public_html_clean_ojs/
+  plugins/
+    generic/
+      browseBySection/
+        version.xml
+        index.php
+        ...
+      customHeader/
+        version.xml
+        index.php
+        ...
+
+JANGAN:
+- copy dari source produksi lama
+- copy .htaccess lama
+- membuka staging dulu
+- menjalankan upgrade database
+
+Setelah selesai, kirim screenshot:
+- plugins/generic/browseBySection
+- plugins/generic/customHeader
