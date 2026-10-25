@@ -84,7 +84,9 @@ class SneatTemplateHook
 
         $previous = libxml_use_internal_errors(true);
         $dom = new DOMDocument('1.0', 'UTF-8');
-        $html = mb_convert_encoding($output, 'HTML-ENTITIES', 'UTF-8');
+        $html = function_exists('mb_convert_encoding')
+            ? mb_convert_encoding($output, 'HTML-ENTITIES', 'UTF-8')
+            : $output;
 
         if (!$dom->loadHTML($html)) {
             libxml_clear_errors();
