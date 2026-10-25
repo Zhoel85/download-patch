@@ -3,7 +3,7 @@ name: Patch Builder
 on:
   push:
     paths:
-      - 'patch-src/caleg/**/build.json'
+      - 'patch-src/caleg/**/part-*.b64'
 
 permissions:
   contents: write
@@ -22,46 +22,42 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          BUILD_FILE="$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- 'patch-src/caleg/**/build.json' | head -n 1)"
-          if [ -z "$BUILD_FILE" ]; then
-            BUILD_FILE="$(find patch-src/caleg -name build.json -type f | sort | tail -n 1)"
+          CHANGED="$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- 'patch-src/caleg/**/part-*.b64' | head -n 1)"
+          if [ -z "$CHANGED" ]; then
+            echo "No patch part detected."
+            exit 1
           fi
 
-          PATCH_DIR="$(dirname "$BUILD_FILE")"
-          PATCH_CODE="$(jq -r '.patch_code' "$BUILD_FILE")"
-          FILE_NAME="$(jq -r '.file_name' "$BUILD_FILE")"
-          PACKAGE_DIR="$PATCH_DIR/package"
-          TAG_NAME="caleg-${PATCH_CODE}"
+          PATCH_DIR="$(dirname "$CHANGED")"
+          PATCH_CODE="$(basename "$PATCH_DIR")"
+          FILE_NAME="$PATCH_CODE.zip"
+          TAG_NAME="caleg-$PATCH_CODE"
 
-          test -d "$PACKAGE_DIR"
-          test -f "$PACKAGE_DIR/manifest.json"
+          test -f "$PATCH_DIR/sha256.txt"
 
           echo "patch_dir=$PATCH_DIR" >> "$GITHUB_OUTPUT"
-          echo "package_dir=$PACKAGE_DIR" >> "$GITHUB_OUTPUT"
           echo "patch_code=$PATCH_CODE" >> "$GITHUB_OUTPUT"
           echo "file_name=$FILE_NAME" >> "$GITHUB_OUTPUT"
           echo "tag_name=$TAG_NAME" >> "$GITHUB_OUTPUT"
 
-      - name: Build and verify patch ZIP
+      - name: Build and verify ZIP
         shell: bash
         run: |
           set -euo pipefail
-          PACKAGE_DIR="${{ steps.meta.outputs.package_dir }}"
+          PATCH_DIR="${{ steps.meta.outputs.patch_dir }}"
           FILE_NAME="${{ steps.meta.outputs.file_name }}"
 
-          (
-            cd "$PACKAGE_DIR"
-            zip -qr "$GITHUB_WORKSPACE/$FILE_NAME" .
-          )
-
+          cat "$PATCH_DIR"/part-*.b64 | tr -d '\r\n\t ' | base64 --decode > "$FILE_NAME"
           unzip -t "$FILE_NAME"
-          sha256sum "$FILE_NAME" | tee "$FILE_NAME.sha256"
 
-          ROOT_MANIFEST="$(unzip -Z1 "$FILE_NAME" | grep -x 'manifest.json' || true)"
-          if [ "$ROOT_MANIFEST" != "manifest.json" ]; then
-            echo "manifest.json is not at ZIP root"
-            exit 1
-          fi
+          EXPECTED="$(tr -d '\r\n ' < "$PATCH_DIR/sha256.txt")"
+          ACTUAL="$(sha256sum "$FILE_NAME" | awk '{print $1}')"
+
+          echo "Expected: $EXPECTED"
+          echo "Actual  : $ACTUAL"
+
+          test "$EXPECTED" = "$ACTUAL"
+          echo "$ACTUAL  $FILE_NAME" > "$FILE_NAME.sha256"
 
       - name: Publish GitHub Release asset
         env:
@@ -78,5 +74,5 @@ jobs:
           else
             gh release create "$TAG" "$FILE_NAME" "$FILE_NAME.sha256" \
               --title "$PATCH_CODE" \
-              --notes "Patch built and verified automatically by GitHub Actions."
+              --notes "Verified patch generated automatically from text chunks."
           fi
