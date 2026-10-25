@@ -3,7 +3,7 @@ name: Patch Builder
 on:
   push:
     paths:
-      - 'patch-src/caleg/**/part-*.b64'
+      - 'patch-src/caleg/**/READY'
 
 permissions:
   contents: write
@@ -22,22 +22,20 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          CHANGED="$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- 'patch-src/caleg/**/part-*.b64' | head -n 1)"
-          if [ -z "$CHANGED" ]; then
-            echo "No patch part detected."
-            exit 1
+          READY_FILE="$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- 'patch-src/caleg/**/READY' | head -n 1)"
+          if [ -z "$READY_FILE" ]; then
+            READY_FILE="$(find patch-src/caleg -name READY -type f | sort | tail -n 1)"
           fi
-
-          PATCH_DIR="$(dirname "$CHANGED")"
+          PATCH_DIR="$(dirname "$READY_FILE")"
           PATCH_CODE="$(basename "$PATCH_DIR")"
           FILE_NAME="$PATCH_CODE.zip"
+          SHA256_EXPECTED="$(tr -d '[:space:]' < "$PATCH_DIR/sha256.txt")"
           TAG_NAME="caleg-$PATCH_CODE"
-
-          test -f "$PATCH_DIR/sha256.txt"
 
           echo "patch_dir=$PATCH_DIR" >> "$GITHUB_OUTPUT"
           echo "patch_code=$PATCH_CODE" >> "$GITHUB_OUTPUT"
           echo "file_name=$FILE_NAME" >> "$GITHUB_OUTPUT"
+          echo "sha256_expected=$SHA256_EXPECTED" >> "$GITHUB_OUTPUT"
           echo "tag_name=$TAG_NAME" >> "$GITHUB_OUTPUT"
 
       - name: Build and verify ZIP
@@ -46,20 +44,16 @@ jobs:
           set -euo pipefail
           PATCH_DIR="${{ steps.meta.outputs.patch_dir }}"
           FILE_NAME="${{ steps.meta.outputs.file_name }}"
+          EXPECTED="${{ steps.meta.outputs.sha256_expected }}"
 
           cat "$PATCH_DIR"/part-*.b64 | tr -d '\r\n\t ' | base64 --decode > "$FILE_NAME"
           unzip -t "$FILE_NAME"
 
-          EXPECTED="$(tr -d '\r\n ' < "$PATCH_DIR/sha256.txt")"
           ACTUAL="$(sha256sum "$FILE_NAME" | awk '{print $1}')"
-
-          echo "Expected: $EXPECTED"
-          echo "Actual  : $ACTUAL"
-
-          test "$EXPECTED" = "$ACTUAL"
+          test "$ACTUAL" = "$EXPECTED"
           echo "$ACTUAL  $FILE_NAME" > "$FILE_NAME.sha256"
 
-      - name: Publish GitHub Release asset
+      - name: Publish release
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -72,7 +66,5 @@ jobs:
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" "$FILE_NAME" "$FILE_NAME.sha256" --clobber
           else
-            gh release create "$TAG" "$FILE_NAME" "$FILE_NAME.sha256" \
-              --title "$PATCH_CODE" \
-              --notes "Verified patch generated automatically from text chunks."
+            gh release create "$TAG" "$FILE_NAME" "$FILE_NAME.sha256"               --title "$PATCH_CODE"               --notes "Built and verified automatically by GitHub Actions."
           fi
