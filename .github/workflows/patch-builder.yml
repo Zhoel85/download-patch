@@ -56,6 +56,16 @@ jobs:
           echo "$SHA256  $FILE_NAME" > "$FILE_NAME.sha256"
           echo "SHA-256: $SHA256"
 
+      - name: Upload chat handoff artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.meta.outputs.patch_code }}
+          path: |
+            ${{ steps.meta.outputs.file_name }}
+            ${{ steps.meta.outputs.file_name }}.sha256
+          if-no-files-found: error
+          retention-days: 30
+
       - name: Publish release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -71,5 +81,5 @@ jobs:
           else
             gh release create "$TAG" "$FILE_NAME" "$FILE_NAME.sha256" \
               --title "$PATCH_CODE" \
-              --notes "Built from repository source, ZIP-tested, and SHA-256 verified by GitHub Actions."
+              --notes "Built from repository source, ZIP-tested, SHA-256 verified, and uploaded as a workflow artifact."
           fi
