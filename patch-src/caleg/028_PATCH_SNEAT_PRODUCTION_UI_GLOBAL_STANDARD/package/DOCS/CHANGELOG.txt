@@ -1,0 +1,7 @@
+028 SNEAT PRODUCTION UI GLOBAL STANDARD
+- Unified production Sneat appearance across all rendered pages.
+- Added child-menu icons and expanded icon mapping.
+- Refined navbar/page heading/footer.
+- Standardized cards, KPI, forms, tables, badges, modals and responsive behavior.
+- Added centralized SweetAlert2 v11.26.25 flash and confirmation handling.
+- Added safe browser fallback if SweetAlert CDN is unavailable.

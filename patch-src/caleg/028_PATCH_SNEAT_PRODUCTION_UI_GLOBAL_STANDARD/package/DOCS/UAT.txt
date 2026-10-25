@@ -1,0 +1,63 @@
+UAT PATCH 028
+
+GLOBAL SHELL
+[ ] Navbar rapi desktop/mobile.
+[ ] Event/status chip tampil.
+[ ] Avatar dropdown berfungsi.
+[ ] Sidebar parent menu berfungsi.
+[ ] Child menu memiliki icon.
+[ ] Active menu benar.
+[ ] Footer normal.
+
+CONTENT
+[ ] x_panel/panel/well tampil sebagai Sneat cards.
+[ ] KPI/stat tile tampil sebagai card dengan icon.
+[ ] Filter form terbaca sebagai filter surface.
+[ ] Form input/select/textarea konsisten.
+[ ] Table responsive, hover, header rapi.
+[ ] Empty table menampilkan empty state.
+[ ] Badge status konsisten.
+[ ] Modal tampil normal.
+[ ] Select2 normal termasuk di modal.
+[ ] DataTables masih berfungsi.
+[ ] Tombol tabel tidak oversized.
+
+SWEETALERT
+[ ] Flash pesan sukses menjadi toast/alert SweetAlert.
+[ ] Flash gagal menjadi SweetAlert error.
+[ ] Link Hapus meminta konfirmasi.
+[ ] Rollback/Pulihkan meminta konfirmasi.
+[ ] Finalisasi meminta konfirmasi.
+[ ] Batal tidak menjalankan aksi.
+[ ] Tanpa internet, fallback alert/confirm tetap memungkinkan operasi.
+
+ROLE
+[ ] Super Admin.
+[ ] Korkab.
+[ ] Korcam.
+[ ] Kordes.
+[ ] Tim/Relawan.
+[ ] Saksi.
+[ ] Login.
+
+MODUL PRIORITAS
+[ ] Command Center.
+[ ] Event.
+[ ] Kandidat.
+[ ] Wilayah/Dapil.
+[ ] DPT.
+[ ] Organisasi.
+[ ] Anggota/Relawan.
+[ ] Kegiatan.
+[ ] Peta Operasional.
+[ ] Saksi.
+[ ] Election Day.
+[ ] Incident.
+[ ] Real Count.
+[ ] Reports.
+[ ] Role & Permission.
+[ ] Import/Export.
+[ ] Audit & Privacy.
+[ ] Deployment Safety Center.
+[ ] Backup & Retention.
+[ ] Production Readiness.

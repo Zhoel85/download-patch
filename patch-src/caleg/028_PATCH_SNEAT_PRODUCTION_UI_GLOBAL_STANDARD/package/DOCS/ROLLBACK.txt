@@ -1,0 +1,10 @@
+ROLLBACK 028
+
+Rollback mengembalikan:
+- application/hooks/SneatTemplateHook.php
+- assets/sneat/css/umsr-compat.css
+- assets/sneat/js/umsr-compat.js
+
+ke kondisi sebelum patch 028.
+
+Tidak ada rollback database.
