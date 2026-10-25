@@ -1,0 +1,7 @@
+026 BACKUP CLEANUP & RETENTION CENTER
+- Added Backup & Retention menu in Sneat System group.
+- Added shortcut from Deployment Safety Center.
+- Added backup inventory, size/age classification and retention policy.
+- Added preview-before-delete and server-side recalculation.
+- Added protected latest baseline/source/database/deployment/Sneat backups.
+- Added safe recursive delete path guard and cleanup audit log.

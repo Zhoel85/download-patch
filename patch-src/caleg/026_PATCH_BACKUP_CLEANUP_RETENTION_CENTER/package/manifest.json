@@ -1,0 +1,8 @@
+{
+  "patch_code":"026_PATCH_BACKUP_CLEANUP_RETENTION_CENTER",
+  "patch_name":"Backup Cleanup & Retention Center",
+  "phase":"OPERATIONS-HARDENING",
+  "version":"1.0.0",
+  "requires":["025_PATCH_SNEAT_LEGACY_TEMPLATE_PURGE"],
+  "description":"Adds a Super Admin Backup & Retention Center integrated with Sneat/System and linked from Deployment Safety Center. It inventories application backup roots, calculates sizes and age, protects recent/baseline/Sneat-critical backups, supports preview-before-delete, server-side revalidation, safe recursive deletion, and audit history."
+}

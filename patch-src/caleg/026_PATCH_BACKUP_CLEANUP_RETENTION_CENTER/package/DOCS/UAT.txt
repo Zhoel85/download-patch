@@ -1,0 +1,36 @@
+UAT PATCH 026
+
+AKSES
+[ ] Menu Sistem -> Backup & Retention tampil hanya pada Super Admin.
+[ ] URL langsung role non-Super Admin ditolak.
+[ ] Deployment Safety Center menampilkan shortcut Kelola Backup.
+
+INVENTORY
+[ ] Total ukuran backup tampil.
+[ ] Backup source/database/deployment/baseline/Sneat terkategori.
+[ ] Umur dan tanggal modifikasi tampil.
+[ ] Root yang tidak ada ditandai TIDAK ADA.
+
+RETENTION
+[ ] Backup <= retention day dilindungi.
+[ ] Source terbaru sesuai keep_source dilindungi.
+[ ] Database terbaru sesuai keep_database dilindungi.
+[ ] Deployment terbaru sesuai keep_deployment dilindungi.
+[ ] Baseline terbaru dilindungi.
+[ ] Backup Sneat terbaru dilindungi.
+[ ] Symlink dilindungi.
+
+PREVIEW
+[ ] Preview tidak menghapus file.
+[ ] Kandidat delete dan estimasi ruang tampil.
+
+APPLY
+[ ] Konfirmasi selain HAPUS BACKUP LAMA ditolak.
+[ ] Apply hanya menghapus kandidat yang dihitung ulang.
+[ ] Root backup tidak dapat terhapus.
+[ ] Histori cleanup tersimpan.
+[ ] Deployment Safety Center tetap normal.
+
+ROLLBACK PATCH
+[ ] Rollback mengembalikan SneatTemplateHook.
+[ ] Tabel log dapat di-drop oleh rollback SQL.

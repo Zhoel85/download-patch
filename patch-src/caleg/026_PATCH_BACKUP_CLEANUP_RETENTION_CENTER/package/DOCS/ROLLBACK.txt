@@ -1,0 +1,10 @@
+ROLLBACK 026
+
+Rollback Deployment Safety Center akan:
+- mengembalikan SneatTemplateHook sebelum 026;
+- menghapus tabel backup_retention_logs melalui SQL rollback;
+- menghapus controller/model/view baru bila engine rollback mendukung file baru.
+
+PENTING:
+File backup yang sudah dihapus melalui fitur cleanup TIDAK dapat dipulihkan oleh rollback patch.
+Karena itu selalu gunakan Preview dan simpan backup kritis di lokasi terpisah.
