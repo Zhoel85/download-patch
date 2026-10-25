@@ -1,8 +1,78 @@
 name: Patch Builder
+
 on:
-  workflow_dispatch:
+  push:
+    paths:
+      - 'patch-src/caleg/**/build.json'
+
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve patch source
+        id: meta
+        shell: bash
+        run: |
+          set -euo pipefail
+          BUILD_FILE="$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- 'patch-src/caleg/**/build.json' | head -n 1)"
+          if [ -z "$BUILD_FILE" ]; then
+            BUILD_FILE="$(find patch-src/caleg -name build.json -type f | sort | tail -n 1)"
+          fi
+          PATCH_DIR="$(dirname "$BUILD_FILE")"
+          PATCH_CODE="$(jq -r '.patch_code' "$BUILD_FILE")"
+          FILE_NAME="$(jq -r '.file_name' "$BUILD_FILE")"
+          SHA256_EXPECTED="$(jq -r '.sha256' "$BUILD_FILE")"
+          TAG_NAME="caleg-${PATCH_CODE}"
+
+          echo "patch_dir=$PATCH_DIR" >> "$GITHUB_OUTPUT"
+          echo "patch_code=$PATCH_CODE" >> "$GITHUB_OUTPUT"
+          echo "file_name=$FILE_NAME" >> "$GITHUB_OUTPUT"
+          echo "sha256_expected=$SHA256_EXPECTED" >> "$GITHUB_OUTPUT"
+          echo "tag_name=$TAG_NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Build ZIP from text chunks
+        shell: bash
+        run: |
+          set -euo pipefail
+          PATCH_DIR="${{ steps.meta.outputs.patch_dir }}"
+          FILE_NAME="${{ steps.meta.outputs.file_name }}"
+          EXPECTED="${{ steps.meta.outputs.sha256_expected }}"
+
+          cat "$PATCH_DIR"/part-*.b64 | tr -d '\r\n\t ' | base64 --decode > "$FILE_NAME"
+          unzip -t "$FILE_NAME"
+
+          ACTUAL="$(sha256sum "$FILE_NAME" | awk '{print $1}')"
+          if [ "$ACTUAL" != "$EXPECTED" ]; then
+            echo "SHA-256 mismatch"
+            echo "Expected: $EXPECTED"
+            echo "Actual  : $ACTUAL"
+            exit 1
+          fi
+
+          echo "$ACTUAL  $FILE_NAME" > "$FILE_NAME.sha256"
+
+      - name: Publish GitHub Release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="${{ steps.meta.outputs.tag_name }}"
+          FILE_NAME="${{ steps.meta.outputs.file_name }}"
+          PATCH_CODE="${{ steps.meta.outputs.patch_code }}"
+
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "$FILE_NAME" "$FILE_NAME.sha256" --clobber
+          else
+            gh release create "$TAG" "$FILE_NAME" "$FILE_NAME.sha256" \
+              --title "$PATCH_CODE" \
+              --notes "Production patch built and verified automatically by GitHub Actions."
+          fi
