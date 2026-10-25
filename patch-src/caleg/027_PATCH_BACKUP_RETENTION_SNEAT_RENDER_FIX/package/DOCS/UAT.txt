@@ -1,0 +1,14 @@
+UAT PATCH 027
+
+[ ] Sistem -> Backup & Retention membuka layout Sneat lengkap.
+[ ] Sidebar Sneat tampil.
+[ ] Navbar Sneat tampil.
+[ ] Judul Backup & Retention tampil normal.
+[ ] Cards total backup/kandidat cleanup/estimasi/dilindungi tampil rapi.
+[ ] Form Retention Policy memakai Bootstrap/Sneat.
+[ ] Tabel Inventaris Backup responsive.
+[ ] Preview Cleanup tetap bekerja.
+[ ] URL /admin/BackupRetentionCenter/preview tetap dalam layout Sneat.
+[ ] Deployment Safety Center shortcut tetap bekerja.
+[ ] Tidak ada perubahan jumlah/ukuran backup akibat hanya membuka halaman.
+[ ] Cleanup tetap membutuhkan konfirmasi.

@@ -1,0 +1,5 @@
+ROLLBACK 027
+
+Rollback mengembalikan BackupRetentionCenter.php versi 026.
+
+Tidak ada perubahan database dan rollback tidak mengubah file backup.
