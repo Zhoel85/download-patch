@@ -26,38 +26,42 @@ jobs:
           if [ -z "$BUILD_FILE" ]; then
             BUILD_FILE="$(find patch-src/caleg -name build.json -type f | sort | tail -n 1)"
           fi
+
           PATCH_DIR="$(dirname "$BUILD_FILE")"
           PATCH_CODE="$(jq -r '.patch_code' "$BUILD_FILE")"
           FILE_NAME="$(jq -r '.file_name' "$BUILD_FILE")"
-          SHA256_EXPECTED="$(jq -r '.sha256' "$BUILD_FILE")"
+          PACKAGE_DIR="$PATCH_DIR/package"
           TAG_NAME="caleg-${PATCH_CODE}"
 
+          test -d "$PACKAGE_DIR"
+          test -f "$PACKAGE_DIR/manifest.json"
+
           echo "patch_dir=$PATCH_DIR" >> "$GITHUB_OUTPUT"
+          echo "package_dir=$PACKAGE_DIR" >> "$GITHUB_OUTPUT"
           echo "patch_code=$PATCH_CODE" >> "$GITHUB_OUTPUT"
           echo "file_name=$FILE_NAME" >> "$GITHUB_OUTPUT"
-          echo "sha256_expected=$SHA256_EXPECTED" >> "$GITHUB_OUTPUT"
           echo "tag_name=$TAG_NAME" >> "$GITHUB_OUTPUT"
 
-      - name: Build ZIP from text chunks
+      - name: Build and verify patch ZIP
         shell: bash
         run: |
           set -euo pipefail
-          PATCH_DIR="${{ steps.meta.outputs.patch_dir }}"
+          PACKAGE_DIR="${{ steps.meta.outputs.package_dir }}"
           FILE_NAME="${{ steps.meta.outputs.file_name }}"
-          EXPECTED="${{ steps.meta.outputs.sha256_expected }}"
 
-          cat "$PATCH_DIR"/part-*.b64 | tr -d '\r\n\t ' | base64 --decode > "$FILE_NAME"
+          (
+            cd "$PACKAGE_DIR"
+            zip -qr "$GITHUB_WORKSPACE/$FILE_NAME" .
+          )
+
           unzip -t "$FILE_NAME"
+          sha256sum "$FILE_NAME" | tee "$FILE_NAME.sha256"
 
-          ACTUAL="$(sha256sum "$FILE_NAME" | awk '{print $1}')"
-          if [ "$ACTUAL" != "$EXPECTED" ]; then
-            echo "SHA-256 mismatch"
-            echo "Expected: $EXPECTED"
-            echo "Actual  : $ACTUAL"
+          ROOT_MANIFEST="$(unzip -Z1 "$FILE_NAME" | grep -x 'manifest.json' || true)"
+          if [ "$ROOT_MANIFEST" != "manifest.json" ]; then
+            echo "manifest.json is not at ZIP root"
             exit 1
           fi
-
-          echo "$ACTUAL  $FILE_NAME" > "$FILE_NAME.sha256"
 
       - name: Publish GitHub Release asset
         env:
@@ -74,5 +78,5 @@ jobs:
           else
             gh release create "$TAG" "$FILE_NAME" "$FILE_NAME.sha256" \
               --title "$PATCH_CODE" \
-              --notes "Production patch built and verified automatically by GitHub Actions."
+              --notes "Patch built and verified automatically by GitHub Actions."
           fi
