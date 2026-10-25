@@ -1,0 +1,61 @@
+UAT PATCH 024 — SNEAT FULL CUTOVER
+
+SHELL
+[ ] Sidebar adalah Sneat, bukan left_col Gentelella.
+[ ] Navbar adalah Sneat navbar-detached.
+[ ] Footer Sneat tampil normal.
+[ ] Tidak ada Portal Blue hero/CSS.
+[ ] Tidak ada body nav-md/nav-sm.
+[ ] Tidak ada custom.min.css/custom.min.js yang dimuat browser.
+
+MENU
+[ ] Super Admin: Command Center.
+[ ] Pemilihan & Data.
+[ ] Operasional.
+[ ] Hari H.
+[ ] Laporan & Analytics.
+[ ] Sistem.
+[ ] Role non-Super Admin tetap hanya melihat menu sesuai role.
+[ ] Dropdown Sneat open/close normal.
+[ ] Mobile menu overlay normal.
+
+CONTENT
+[ ] x_panel lama tampil sebagai Sneat card.
+[ ] Form lama tetap submit.
+[ ] Table responsive.
+[ ] Modal lama tetap dapat show/hide.
+[ ] data-toggle/data-target legacy tetap bekerja.
+[ ] Select2 tetap berjalan.
+[ ] SweetAlert tetap berjalan.
+[ ] DataTables tetap berjalan.
+[ ] Tombol CRUD tetap menuju route yang sama.
+
+AUTH
+[ ] Login admin tampil dalam Sneat auth card.
+[ ] Login anggota tetap bisa digunakan.
+[ ] CSRF tetap valid.
+[ ] Logout/login tidak redirect loop.
+
+KRITIS
+[ ] Deployment Safety Center.
+[ ] Role & Permission.
+[ ] Import/Export.
+[ ] Audit & Privacy.
+[ ] Event.
+[ ] DPT.
+[ ] Organisasi.
+[ ] Saksi.
+[ ] Incident.
+[ ] Real Count.
+[ ] Production Readiness.
+
+MOBILE
+[ ] Sidebar offcanvas Sneat.
+[ ] Content 100% width.
+[ ] Table scroll di panel.
+[ ] Modal tidak overflow.
+
+MIGRATION CENTER
+[ ] Semua Sneat Runtime = OK.
+[ ] Legacy candidates terdeteksi.
+[ ] Jangan lanjut Patch 025 jika kandidat template lama masih berstatus MASIH DIPAKAI.

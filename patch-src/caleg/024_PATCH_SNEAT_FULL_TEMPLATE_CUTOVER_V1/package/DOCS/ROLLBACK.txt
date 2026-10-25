@@ -1,0 +1,12 @@
+ROLLBACK PATCH 024
+
+Rollback melalui Deployment Safety Center mengembalikan:
+- application/config/hooks.php ke konfigurasi 019/023 dengan FinalNavigationHook
+- application/hooks/SneatTemplateHook.php dapat dibiarkan karena tidak direferensikan
+- controller/model/view Sneat Migration Center dapat dibiarkan tanpa efek
+
+Asset assets/sneat/ dapat dibiarkan setelah rollback karena tidak dimuat.
+Tidak ada perubahan database.
+
+CATATAN
+Jangan jalankan Patch 025 sebelum 024 lulus UAT.
