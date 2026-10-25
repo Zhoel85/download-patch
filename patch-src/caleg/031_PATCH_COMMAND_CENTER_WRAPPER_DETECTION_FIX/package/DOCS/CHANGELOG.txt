@@ -1,0 +1,4 @@
+031 COMMAND CENTER WRAPPER DETECTION FIX
+- Verified and fixed 030 double-escaped JavaScript regex defect.
+- Replaced class-regex detection with deterministic common-ancestor expansion.
+- Command Center only.

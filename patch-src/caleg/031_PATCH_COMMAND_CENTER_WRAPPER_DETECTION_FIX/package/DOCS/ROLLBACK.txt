@@ -1,0 +1,8 @@
+ROLLBACK 031
+
+Rollback mengembalikan:
+- SneatTemplateHook.php versi 030
+- umsr-compat.css versi 030
+- umsr-compat.js versi 030
+
+Tidak ada perubahan database.

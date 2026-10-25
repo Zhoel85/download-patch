@@ -1,0 +1,8 @@
+{
+  "patch_code":"031_PATCH_COMMAND_CENTER_WRAPPER_DETECTION_FIX",
+  "patch_name":"Command Center Wrapper Detection Fix",
+  "phase":"UI-PAGE-BY-PAGE-CORRECTIVE",
+  "version":"1.0.0",
+  "requires":["030_PATCH_COMMAND_CENTER_FULL_WIDTH_FIX"],
+  "description":"Corrects the verified JavaScript escaping defect in patch 030. Instead of regex-matching legacy col/row classes, it deterministically expands every common ancestor that actually contains the Command Center filter, Coverage Organisasi, and Tugas/Kegiatan Tertunda sections. Scope is Command Center only."
+}

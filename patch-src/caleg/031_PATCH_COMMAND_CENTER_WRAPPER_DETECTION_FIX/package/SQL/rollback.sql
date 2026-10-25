@@ -1,0 +1,3 @@
+-- 031 COMMAND CENTER WRAPPER DETECTION FIX ROLLBACK
+-- No database rollback required.
+SET NAMES utf8mb4;

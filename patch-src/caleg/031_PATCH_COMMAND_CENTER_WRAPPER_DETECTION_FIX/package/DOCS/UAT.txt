@@ -1,0 +1,11 @@
+UAT PATCH 031 — COMMAND CENTER
+
+[ ] Filter memakai lebar workspace secara penuh.
+[ ] KPI memakai lebar workspace secara penuh.
+[ ] Tidak ada ruang kosong sekitar 1/3 layar di kanan.
+[ ] 4 KPI per baris pada desktop.
+[ ] Coverage Organisasi + Tugas/Kegiatan Tertunda tetap dua kolom.
+[ ] Tidak ada horizontal overflow.
+[ ] Sidebar/navbar/footer tidak berubah.
+[ ] Halaman selain Command Center tidak berubah.
+[ ] Ctrl+F5 setelah apply menampilkan asset v031.
