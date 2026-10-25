@@ -39,6 +39,15 @@ jobs:
           echo "file_name=$FILE_NAME" >> "$GITHUB_OUTPUT"
           echo "tag_name=$TAG_NAME" >> "$GITHUB_OUTPUT"
 
+      - name: Run package build hook
+        shell: bash
+        run: |
+          set -euo pipefail
+          PATCH_DIR="${{ steps.meta.outputs.patch_dir }}"
+          if [ -f "$PATCH_DIR/BUILD.sh" ]; then
+            (cd "$PATCH_DIR" && bash BUILD.sh)
+          fi
+
       - name: Validate package source
         shell: bash
         run: |
