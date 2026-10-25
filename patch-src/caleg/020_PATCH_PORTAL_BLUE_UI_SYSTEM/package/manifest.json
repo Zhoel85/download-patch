@@ -1,0 +1,8 @@
+{
+  "patch_code": "020_PATCH_PORTAL_BLUE_UI_SYSTEM",
+  "patch_name": "Portal Blue UI System & Production Page Layout",
+  "phase": "PHASE 023D",
+  "version": "1.0.0",
+  "requires": ["019_PATCH_FINAL_HARDENING_PERFORMANCE_UAT_GATE"],
+  "description": "Global non-destructive UI/UX overhaul inspired by the approved Portal Akademik visual language: light sidebar, role card, event-aware topbar and hero, module tabs, cards, filters, tables, badges, buttons, and responsive mobile styling. Business logic, routes, permissions, queries, and data remain unchanged."
+}

@@ -1,0 +1,43 @@
+UAT PATCH 020
+
+SUPER ADMIN
+[ ] Sidebar putih dan role card tampil.
+[ ] Command Center menjadi menu pertama.
+[ ] Pemilihan & Data berisi Event, Kandidat & Paslon, Wilayah & Dapil, DPT/Pemilih.
+[ ] Operasional berisi Organisasi, Anggota & Relawan, Kegiatan & Timeline, Peta Operasional.
+[ ] Hari H berisi Saksi 360, Election Day, Incident Center, Real Count, Live Activity, Big Screen.
+[ ] Laporan & Analytics tampil.
+[ ] Sistem berisi Role & Permission, Import/Export, Audit & Privasi, Deployment, Database, Legacy, Production Readiness.
+[ ] Semua menu membuka route yang sama seperti sebelum patch.
+[ ] Hero halaman berubah sesuai modul.
+[ ] Tab modul aktif mengikuti halaman.
+[ ] Form/filter rapi.
+[ ] Table responsive dan tidak memotong aksi.
+[ ] Badge status mudah dibaca.
+[ ] SweetAlert/Select2/Modal tetap berfungsi.
+[ ] Tidak ada redirect Auth baru.
+
+ROLE LAPANGAN
+[ ] Menu role lama tetap sesuai scope.
+[ ] Hanya styling yang berubah.
+[ ] Mobile Workspace tetap dapat dibuka.
+[ ] Saksi Hari H tetap touch-friendly.
+
+MOBILE
+[ ] Sidebar collapse normal.
+[ ] Tab horizontal dapat di-scroll.
+[ ] Hero tidak overflow.
+[ ] Table dapat scroll horizontal.
+[ ] Tombol tidak terlalu besar/kecil.
+
+REGRESSION
+[ ] Event Center CRUD.
+[ ] Kandidat CRUD.
+[ ] DPT.
+[ ] Organisasi.
+[ ] Saksi.
+[ ] Incident.
+[ ] Real Count.
+[ ] Import/Export.
+[ ] Deployment Safety Center.
+[ ] Production Readiness.

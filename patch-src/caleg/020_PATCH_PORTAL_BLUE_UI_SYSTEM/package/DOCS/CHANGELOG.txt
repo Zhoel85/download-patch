@@ -1,0 +1,7 @@
+020 PORTAL BLUE UI SYSTEM
+- Added Portal Akademik-inspired production visual system.
+- Unified sidebar, topbar, hero, tabs, forms, cards, tables, badges, buttons and modals.
+- Added responsive rules for desktop/tablet/mobile.
+- Preserved existing routes, permissions and business logic.
+- Super Admin receives the final grouped production menu.
+- Other roles keep their existing menu structure and receive the new visual theme only.
