@@ -1,0 +1,24 @@
+UAT PATCH 017
+
+SUPER ADMIN
+1. Login dan pastikan sidebar berubah menjadi 6 kelompok produksi.
+2. Command Center membuka admin/Operations360/dashboard.
+3. Pemilihan & Data: Event, Kandidat, Wilayah, DPT seluruhnya terbuka.
+4. Operasional: Organisasi, Anggota, Kegiatan, Peta seluruhnya terbuka.
+5. Hari H: Saksi, Election Day, Incident, Real Count, Activity, Big Screen terbuka.
+6. Laporan & Analytics terbuka.
+7. Sistem: Role Permission, Import/Export, Audit Privasi, Deployment, Database Normalization, Legacy Compatibility terbuka.
+8. Event context menampilkan event aktif tanpa mengubah event/data.
+9. Legacy Compatibility dapat membuka route lama bila benar-benar diperlukan.
+10. Logout/login kembali dan ulangi nomor 1-9.
+
+ROLE LAIN
+11. Login Verifikator: menu lama tidak rusak.
+12. Login Admin/Pimpinan: menu lama tidak rusak.
+13. Login Korkab/Korcam/Kordes/Relawan: Mobile Workspace dan menu role tetap normal.
+14. Login Saksi: alur Hari H mobile tetap normal.
+
+REGRESSION
+15. POST/CSRF pada modul baru tetap normal.
+16. Tidak ada redirect tak terduga ke Auth.
+17. Tidak ada tabel/data yang terhapus.
