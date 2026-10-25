@@ -1,0 +1,30 @@
+UAT PATCH 023
+
+COMMAND CENTER
+[ ] Hero bertuliskan "Command Center", bukan "Halaman Command Center Dashboard".
+[ ] Filter mulai sejajar dengan hero/content kiri.
+[ ] Stat cards menggunakan lebar content secara seimbang.
+[ ] Tidak ada offset kosong 1-2 kolom di sebelah kiri.
+[ ] Tidak ada body horizontal scrollbar.
+
+SIDEBAR
+[ ] Sidebar penuh setinggi viewport.
+[ ] Jika menu panjang, scroll terjadi di sidebar.
+[ ] Dropdown 021 tetap bekerja.
+[ ] Hamburger nav-md/nav-sm tetap bekerja.
+
+FOOTER
+[ ] Footer mulai tepat setelah sidebar pada desktop.
+[ ] Footer mengikuti lebar content.
+[ ] Teks SAR DIGITAL | By.DZL terbaca rapi.
+[ ] Footer tidak menutupi content.
+[ ] Mobile footer 100% dan rata tengah.
+
+REGRESSION
+[ ] Deployment Safety Center.
+[ ] Event Center.
+[ ] Organization.
+[ ] Saksi.
+[ ] Real Count.
+[ ] Import/Export.
+[ ] Production Readiness.

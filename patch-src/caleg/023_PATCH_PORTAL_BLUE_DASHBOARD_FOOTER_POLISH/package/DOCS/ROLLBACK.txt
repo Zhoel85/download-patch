@@ -1,0 +1,8 @@
+ROLLBACK 023
+
+Rollback mengembalikan:
+- CSS Portal Blue ke versi 022
+- JS Portal Blue ke versi 021 yang digunakan 022
+- FinalNavigationHook ke versi 022
+
+Tidak ada perubahan database.
