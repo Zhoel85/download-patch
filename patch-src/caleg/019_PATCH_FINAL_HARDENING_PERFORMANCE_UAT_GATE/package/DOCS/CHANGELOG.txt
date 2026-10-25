@@ -1,3 +1,7 @@
+019 v1.0.1
+- Race-safe Event+TPS finalization claim using INSERT IGNORE + FOR UPDATE owner verification.
+- Concurrent first-finalization requests now resolve cleanly to one owner and one HTTP 409 loser.
+
 019 v1.0.0
 - Event-scoped TPS metrics for Election Day and Big Screen.
 - Fixed candidate recap to count VERIFIED headers only.

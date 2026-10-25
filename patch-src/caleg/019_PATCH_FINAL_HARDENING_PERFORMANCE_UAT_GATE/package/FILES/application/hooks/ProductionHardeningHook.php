@@ -228,20 +228,27 @@ class ProductionHardeningHook
                     'updated_at' => $now,
                 ));
         } elseif (!$registry) {
-            $CI->db->insert('real_count_tps_registry', array(
-                'event_id' => $eventId,
-                'id_tps' => $idTps,
-                'witness_id' => $witnessId,
-                'header_id' => 0,
-                'state' => 'CLAIMED',
-                'claimed_at' => $now,
-                'created_at' => $now,
-                'updated_at' => $now,
-            ));
+            $CI->db->query(
+                'INSERT IGNORE INTO real_count_tps_registry
+                    (event_id,id_tps,witness_id,header_id,state,claimed_at,created_at,updated_at)
+                 VALUES (?,?,?,0,"CLAIMED",?,?,?)',
+                array($eventId, $idTps, $witnessId, $now, $now, $now)
+            );
 
-            if (!$CI->db->trans_status()) {
+            $owner = $CI->db->query(
+                'SELECT * FROM real_count_tps_registry
+                 WHERE event_id = ? AND id_tps = ?
+                 LIMIT 1 FOR UPDATE',
+                array($eventId, $idTps)
+            )->row_array();
+
+            if (!$owner || (int) $owner['witness_id'] !== $witnessId) {
                 $CI->db->trans_rollback();
-                show_error('Finalisasi TPS sedang diproses oleh request lain.', 409, 'Finalisasi TPS Terkunci');
+                show_error(
+                    'Finalisasi TPS sedang diproses oleh request lain.',
+                    409,
+                    'Finalisasi TPS Terkunci'
+                );
             }
         }
 
