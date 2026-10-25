@@ -1,0 +1,14 @@
+UAT PATCH 030 — COMMAND CENTER
+
+[ ] Command Center memakai hampir seluruh lebar area setelah sidebar.
+[ ] Tidak ada ruang kosong besar di sisi kanan.
+[ ] Filter Event/Kandidat/Tampilkan full-width dan proporsional.
+[ ] KPI Event/Kandidat/TPS/Struktur Aktif 4 kolom.
+[ ] KPI Relawan/Kegiatan/Saksi/Alert 4 kolom.
+[ ] Coverage Organisasi + Tugas/Kegiatan Tertunda tetap dua kolom.
+[ ] Card tidak keluar viewport.
+[ ] Tidak ada body horizontal scrollbar.
+[ ] Sidebar/navbar/footer tidak berubah.
+[ ] Dropdown menu tetap bekerja.
+[ ] Halaman Event/DPT/Sistem tidak berubah akibat 030.
+[ ] Mobile tetap stack aman.
