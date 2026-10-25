@@ -1,0 +1,25 @@
+PERFORMANCE INDEXES 019
+
+witness_result_headers:
+- idx_rc_event_tps_status(event_id,id_tps,status)
+- idx_rc_event_status_updated(event_id,status,updated_at)
+
+campaign_incidents:
+- idx_incident_event_tps_status(event_id,id_tps,status,priority)
+
+campaign_witnesses:
+- idx_witness_event_tps_active(event_id,id_tps,is_active)
+
+campaign_witness_day:
+- idx_witness_day_date(day_date,witness_id,checkin_at)
+
+campaign_live_activity:
+- idx_live_event_created(event_id,created_at)
+
+dpt_records:
+- idx_dpt_event_area(event_id,version_id,id_kecamatan,id_desa,id_tps)
+
+campaign_org_assignments:
+- idx_org_event_role_area(event_id,role_code,status,id_kecamatan,id_desa,id_tps)
+
+Pagination/batching tetap wajib untuk daftar besar; jangan menaikkan LIMIT menjadi ribuan tanpa kebutuhan export.

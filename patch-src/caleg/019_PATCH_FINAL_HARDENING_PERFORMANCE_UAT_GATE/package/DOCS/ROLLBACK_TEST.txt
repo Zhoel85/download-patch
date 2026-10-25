@@ -1,0 +1,10 @@
+ROLLBACK TEST 019
+
+1. Backup source+DB sesudah Apply 019.
+2. Deployment Safety Center -> Rollback 019 pada staging.
+3. Pastikan hooks.php dan FinalNavigationHook kembali ke state 018.
+4. ElectionDay_model kembali dari source backup DSC.
+5. Tabel real_count_tps_registry dan security_runtime_rate_limits hilang.
+6. Index 019 hilang.
+7. Data bisnis witness_result_headers/lines, incidents, event, DPT TIDAK boleh hilang.
+8. Apply kembali 019 pada staging dan ulangi Production Readiness.

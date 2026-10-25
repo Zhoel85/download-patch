@@ -1,0 +1,10 @@
+BACKUP / RESTORE TEST
+
+1. Dari Deployment Safety Center buat Source Backup dan Database Backup.
+2. Catat nama file, size dan waktu.
+3. Pada staging/clone database, restore backup database.
+4. Pastikan tabel 001-019 tersedia.
+5. Login Super Admin.
+6. Buka Event, Organisasi, Saksi, Election Day, Real Count, Audit & Privacy.
+7. Pastikan jumlah event, kandidat, TPS mapping, witness dan VERIFIED header sesuai sebelum backup.
+8. Jangan menyatakan produksi siap jika restore belum pernah diuji.

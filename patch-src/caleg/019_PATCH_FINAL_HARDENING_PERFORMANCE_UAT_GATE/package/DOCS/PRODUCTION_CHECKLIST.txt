@@ -1,0 +1,26 @@
+PRODUCTION CHECKLIST
+
+[ ] 017 APPLIED + UAT PASS
+[ ] 018 APPLIED + UAT PASS
+[ ] 019 APPLIED + UAT PASS
+[ ] Source backup terbaru
+[ ] Database backup terbaru
+[ ] Restore test PASS
+[ ] Rollback test PASS
+[ ] Production Readiness bukan NO-GO
+[ ] Concurrency Real Count PASS
+[ ] Event aktif benar
+[ ] TPS event mapping benar
+[ ] Kandidat/paslon benar
+[ ] DPT version aktif benar
+[ ] Organisasi coverage diperiksa
+[ ] Saksi & TPS assignment diperiksa
+[ ] Big Screen token baru dibuat
+[ ] Big Screen hanya VERIFIED
+[ ] Mobile/PWA HTTPS PASS
+[ ] CSRF PASS
+[ ] Login throttle PASS
+[ ] Upload folder sensitif protected
+[ ] display_errors production OFF
+[ ] Legacy write monitor diperiksa
+[ ] Operator/verifikator briefing selesai

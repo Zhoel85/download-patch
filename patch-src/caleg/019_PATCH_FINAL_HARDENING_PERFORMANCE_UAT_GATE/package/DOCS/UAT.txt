@@ -1,0 +1,44 @@
+FINAL UAT PATCH 019
+
+SUPER ADMIN
+1. Semua 6 kelompok menu 017 normal.
+2. Production Readiness terbuka tanpa redirect Auth.
+3. Event aktif benar.
+4. Event TPS mapping benar.
+5. Command Center angka TPS sesuai event.
+6. Real Count hanya menjumlah VERIFIED.
+7. Big Screen sama dengan Real Count admin.
+8. Incident Center normal.
+9. Import/Export normal.
+10. Audit/Privacy normal.
+11. Legacy Compatibility normal.
+
+VERIFIKATOR / OPERATOR REAL COUNT
+12. Hasil FINALIZED tampil.
+13. VERIFY menghasilkan VERIFIED.
+14. verifier_person_id terisi canonical person bila mapping tersedia.
+15. REVISION membuat revision history.
+16. Dua finalisasi Event+TPS berbeda witness tidak boleh sama-sama otoritatif.
+
+PIMPINAN
+17. Monitoring/laporan read-only sesuai izin.
+18. Tidak dapat melakukan operasi yang tidak diizinkan.
+
+KORKAB/KORCAM/KORDES/KOORDINATOR TPS/RELAWAN
+19. Scope wilayah tidak melebar.
+20. Mobile Workspace tetap normal.
+
+SAKSI
+21. TPS Saya benar.
+22. Check-in.
+23. Lapor insiden.
+24. Input draft.
+25. Finalisasi.
+26. Finalisasi kedua dari witness lain pada TPS sama harus ditolak 409.
+
+REGRESSION
+27. Login/logout semua role.
+28. CSRF POST.
+29. SweetAlert feedback.
+30. PWA install/HTTPS.
+31. Tidak ada data bisnis terhapus.

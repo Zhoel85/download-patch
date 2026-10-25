@@ -1,0 +1,10 @@
+019 v1.0.0
+- Event-scoped TPS metrics for Election Day and Big Screen.
+- Fixed candidate recap to count VERIFIED headers only.
+- Added Event+TPS finalization registry/concurrency claim.
+- Added runtime rate limiting.
+- Added production security headers and no-store.
+- Added query indexes.
+- Added upload directory hardening.
+- Added Production Readiness GO/CONDITIONAL/NO-GO gate.
+- Added final UAT, concurrency, backup/restore, rollback and security runbooks.
