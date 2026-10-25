@@ -1,0 +1,26 @@
+UAT PATCH 033 — PEMILIHAN & DATA
+
+EVENT
+[ ] Tab modul hampir selebar workspace.
+[ ] KPI hampir selebar workspace.
+[ ] Tambah Event + Daftar Event memenuhi area kerja.
+[ ] Keduanya tetap dua kolom desktop.
+[ ] Tidak ada area kosong besar di kanan.
+
+KANDIDAT & PASLON
+[ ] Outer content full workspace.
+[ ] Layout internal multi-column tetap benar.
+
+WILAYAH & DAPIL
+[ ] Outer content full workspace.
+[ ] Mapping/table tetap responsive.
+
+DPT / PEMILIH
+[ ] Filter/table full workspace.
+[ ] Tidak ada area kosong besar di kanan.
+
+GLOBAL
+[ ] Sidebar/navbar/footer tidak berubah.
+[ ] Command Center tidak berubah.
+[ ] Operasional/Hari H/Sistem tidak berubah.
+[ ] Tidak ada horizontal overflow.

@@ -1,0 +1,8 @@
+{
+  "patch_code":"033_PATCH_ELECTION_CENTER_OUTER_WRAPPER_FULL_WIDTH_FIX",
+  "patch_name":"Election Center Outer Wrapper Full Width Fix",
+  "phase":"UI-PAGE-BY-PAGE-CORRECTIVE",
+  "version":"1.0.0",
+  "requires":["032_PATCH_ELECTION_CENTER_FULL_WIDTH_GROUP_FIX"],
+  "description":"Fixes the remaining outer-width constraint across Event, Kandidat & Paslon, Wilayah & Dapil, and DPT/Pemilih by deterministically locating the shared wrapper around the ElectionCenter module navigation plus first and last major content blocks, then expanding only that wrapper chain to the full Sneat workspace."
+}

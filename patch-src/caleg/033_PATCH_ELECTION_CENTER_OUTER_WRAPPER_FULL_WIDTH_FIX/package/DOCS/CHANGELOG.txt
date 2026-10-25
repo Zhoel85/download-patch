@@ -1,0 +1,5 @@
+033 ELECTION CENTER OUTER WRAPPER FULL WIDTH FIX
+- Detects the actual shared outer wrapper via module nav + content landmarks.
+- Expands the wrapper chain to full Sneat workspace.
+- Preserves internal multi-column layouts.
+- Scope limited to admin/ElectionCenter/*.
