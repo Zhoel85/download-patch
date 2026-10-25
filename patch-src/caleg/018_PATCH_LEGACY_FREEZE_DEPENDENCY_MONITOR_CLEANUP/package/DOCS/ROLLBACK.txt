@@ -1,0 +1,6 @@
+Rollback via Deployment Safety Center.
+Pulihkan hooks.php dari ROLLBACK_FILES.
+Hapus LegacyDependencyHook.php dan Legacy_dependency_model.php.
+Jika DSC source rollback tidak otomatis, pulihkan LegacyCompatibility controller/view dari backup patch 017/DSC snapshot.
+SQL rollback hanya menghapus tabel monitor/freeze 018 dan permission SYSTEM.LEGACY_MONITOR.
+Tidak ada data bisnis yang dihapus.

@@ -1,0 +1,13 @@
+UAT 018
+1. 017 APPLIED.
+2. Sistem -> Legacy / Compatibility tampil.
+3. GET Real Count/Saksi legacy masih dapat dibaca.
+4. POST write Real Count legacy ditolak 409.
+5. POST write Saksi legacy ditolak 409.
+6. Real Count Engine canonical tetap normal.
+7. Saksi 360 canonical tetap normal.
+8. Admin/Role legacy tetap MONITOR.
+9. Korkab/Korcam/Kordes/Relawan tetap tidak diblokir.
+10. Counter READ/WRITE berubah setelah akses.
+11. Toggle LEGACY_REAL_COUNT/SASKI MONITOR <-> READ_ONLY tercatat.
+12. data_user/data_anggota dan data bisnis tetap utuh.
