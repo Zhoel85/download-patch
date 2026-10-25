@@ -1,0 +1,9 @@
+ROLLBACK 021
+
+Gunakan tombol Rollback di Deployment Safety Center.
+Rollback mengembalikan:
+- assets/js/campaign-portal-v2.js ke versi 020
+- assets/css/campaign-portal-v2.css ke versi 020
+- application/hooks/FinalNavigationHook.php ke versi 020
+
+Tidak ada perubahan database.

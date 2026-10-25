@@ -1,0 +1,37 @@
+UAT PATCH 021
+
+SIDEBAR
+[ ] Klik Pemilihan & Data membuka/menutup submenu.
+[ ] Klik Operasional membuka/menutup submenu.
+[ ] Klik Hari H membuka/menutup submenu.
+[ ] Klik Sistem membuka/menutup submenu.
+[ ] Hanya satu group perlu terbuka saat dipilih.
+[ ] Link child menu tetap dapat dibuka.
+[ ] Active menu sesuai URL.
+
+HAMBURGER
+[ ] nav-md -> nav-sm rapi.
+[ ] nav-sm -> nav-md rapi.
+[ ] Topbar tidak tertinggal 230px ketika sidebar mini.
+[ ] Content tidak tertutup sidebar.
+
+LAYOUT
+[ ] Tidak ada judul halaman ganda di bawah hero.
+[ ] Tidak ada scrollbar horizontal pada body desktop.
+[ ] Table lebar scroll hanya di panel table-responsive.
+[ ] Deployment Safety Center dua kolom tetap rapi.
+[ ] Card, alert, tombol, modal, Select2, SweetAlert tetap normal.
+
+REGRESSION
+[ ] Deployment Safety Center.
+[ ] Event Center.
+[ ] Operations360.
+[ ] Election Day.
+[ ] Real Count.
+[ ] Import/Export.
+[ ] Audit & Privacy.
+[ ] Production Readiness.
+[ ] Mobile Workspace.
+
+CACHE
+[ ] Setelah Apply lakukan Ctrl+F5.
