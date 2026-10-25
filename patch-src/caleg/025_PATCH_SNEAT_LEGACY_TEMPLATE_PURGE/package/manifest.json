@@ -1,0 +1,8 @@
+{
+  "patch_code":"025_PATCH_SNEAT_LEGACY_TEMPLATE_PURGE",
+  "patch_name":"Sneat Legacy Template Dependency-Safe Purge",
+  "phase":"TEMPLATE CLEANUP",
+  "version":"1.0.0",
+  "requires":["024_PATCH_SNEAT_FULL_TEMPLATE_CUTOVER_V1"],
+  "description":"Adds dependency-safe cleanup and restore for obsolete Portal Blue/Gentelella template assets after Sneat cutover. Candidates are scanned before removal and moved into application/backups/sneat_template_cleanup_025 instead of being destroyed."
+}
