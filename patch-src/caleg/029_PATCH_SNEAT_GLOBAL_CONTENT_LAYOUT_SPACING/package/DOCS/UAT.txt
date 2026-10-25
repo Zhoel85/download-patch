@@ -1,0 +1,54 @@
+UAT PATCH 029
+
+GLOBAL
+[ ] Content menggunakan seluruh sisa layar.
+[ ] Tidak ada gap kosong besar di kanan pada desktop.
+[ ] Single-column legacy wrapper menjadi full-width.
+[ ] Layout dua kolom tetap dua kolom.
+[ ] Tidak ada body horizontal overflow.
+
+FILTER / FORM
+[ ] Select dan input tidak saling menempel.
+[ ] Tombol filter memiliki jarak yang cukup.
+[ ] Filter compact rapi dalam satu baris pada desktop.
+[ ] Filter stack rapi pada mobile.
+[ ] Form CRUD besar tidak dipaksa menjadi filter horizontal.
+[ ] Select2 single/multiple normal.
+[ ] Select2 dalam modal normal.
+
+CARDS / KPI
+[ ] Card memakai penuh grid cell.
+[ ] KPI menggunakan lebar penuh dan gutter konsisten.
+[ ] 4 KPI per row desktop, 2 tablet, 1 mobile.
+[ ] Coverage/Kegiatan/section lain sejajar.
+
+TABLE
+[ ] Table responsive.
+[ ] DataTables search/length rapi.
+[ ] Button aksi tidak berhimpitan.
+[ ] Pagination normal.
+
+MODUL PRIORITAS
+[ ] Command Center.
+[ ] Event.
+[ ] Kandidat.
+[ ] Wilayah/Dapil.
+[ ] DPT.
+[ ] Organisasi.
+[ ] Anggota/Relawan.
+[ ] Kegiatan.
+[ ] Saksi.
+[ ] Election Day.
+[ ] Incident.
+[ ] Real Count.
+[ ] Reports.
+[ ] Import/Export.
+[ ] Deployment Safety Center.
+[ ] Backup & Retention.
+[ ] Production Readiness.
+
+MOBILE
+[ ] Navbar/menu normal.
+[ ] Filter 1 kolom.
+[ ] Buttons tidak keluar layar.
+[ ] Table scroll internal.
