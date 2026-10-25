@@ -1,0 +1,8 @@
+{
+  "patch_code":"032_PATCH_ELECTION_CENTER_FULL_WIDTH_GROUP_FIX",
+  "patch_name":"Election Center Full Width Group Fix",
+  "phase":"UI-PAGE-BY-PAGE-CORRECTIVE",
+  "version":"1.0.0",
+  "requires":["031_PATCH_COMMAND_CENTER_WRAPPER_DETECTION_FIX"],
+  "description":"Targeted layout correction for all Pemilihan & Data pages under admin/ElectionCenter: Event, Kandidat & Paslon, Wilayah & Dapil, and DPT/Pemilih. Safely expands legacy single-column wrapper chains to the full Sneat workspace while preserving genuine multi-column internal layouts."
+}

@@ -1,0 +1,791 @@
+/*
+ * SAR DIGITAL — Sneat Production UI System v028
+ * Global compatibility + production visual standard.
+ */
+
+:root {
+  --sar-primary: #696cff;
+  --sar-primary-rgb: 105, 108, 255;
+  --sar-primary-soft: #f0f1ff;
+  --sar-success: #71dd37;
+  --sar-warning: #ffab00;
+  --sar-danger: #ff3e1d;
+  --sar-info: #03c3ec;
+  --sar-body: #f5f5f9;
+  --sar-surface: #fff;
+  --sar-text: #566a7f;
+  --sar-muted: #a1acb8;
+  --sar-border: #e7e7ff;
+  --sar-border-soft: #eceef1;
+  --sar-radius: .625rem;
+  --sar-shadow: 0 .125rem .375rem rgba(67,89,113,.12);
+  --sar-shadow-lg: 0 .625rem 1.5rem rgba(67,89,113,.14);
+}
+
+html, body { background: var(--sar-body); }
+body {
+  font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--sar-text);
+  text-rendering: optimizeLegibility;
+}
+
+.layout-menu .app-brand.demo { height: 72px; }
+.sneat-sar-logo {
+  width: 32px; height: 32px; display: inline-flex;
+  align-items: center; justify-content: center;
+  color: var(--sar-primary); font-size: 30px;
+}
+.app-brand-text { letter-spacing: -.02em; }
+
+.sneat-role-card {
+  background: linear-gradient(135deg,#696cff 0%,#5d5fe9 100%);
+  color:#fff; border-radius:.75rem; padding:.9rem 1rem;
+  display:flex; flex-direction:column; gap:.15rem;
+  box-shadow:0 .375rem 1rem rgba(var(--sar-primary-rgb),.18);
+}
+.sneat-role-card small { opacity:.72; font-size:.65rem; letter-spacing:.06em; font-weight:600; }
+.sneat-role-card strong { font-size:.95rem; }
+.sneat-role-card span { opacity:.8; font-size:.68rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+.layout-menu .menu-inner { padding-bottom:1.25rem!important; }
+.layout-menu .menu-item .menu-link { border-radius:.375rem; margin:.08rem .55rem; min-height:2.65rem; }
+.layout-menu .menu-item.active > .menu-link { box-shadow:0 .125rem .25rem rgba(var(--sar-primary-rgb),.18); }
+.layout-menu .menu-sub .menu-link { padding-left:2.8rem!important; font-size:.84rem; }
+.layout-menu .menu-sub .menu-icon { position:absolute; left:1rem; font-size:1rem!important; width:1.25rem!important; }
+.layout-menu .menu-icon { color:#697a8d; }
+.layout-menu .menu-item.active > .menu-link .menu-icon { color:var(--sar-primary); }
+
+.layout-navbar {
+  min-height:4rem;
+  box-shadow:0 .125rem .375rem rgba(67,89,113,.10)!important;
+}
+.sneat-portal-title { font-size:.82rem; letter-spacing:.035em; color:#566a7f; }
+.sar-event-chip { padding:.45rem .7rem; border-radius:50rem; }
+.dropdown-menu { border:0; box-shadow:var(--sar-shadow-lg); border-radius:.625rem; }
+
+.content-wrapper { min-height:calc(100vh - 4rem); }
+.container-p-y { padding-top:1.5rem!important; padding-bottom:1.5rem!important; }
+.sar-page-heading {
+  background:transparent;
+  padding:.25rem 0 .35rem;
+}
+.sar-page-heading h4 { color:#566a7f; font-size:1.45rem; letter-spacing:-.02em; }
+.sar-page-heading p { font-size:.875rem; }
+
+.sneat-content-bridge { min-width:0; }
+.sneat-content-bridge > .container,
+.sneat-content-bridge > .container-fluid,
+.sneat-content-bridge > .row,
+.sneat-content-bridge > .col-md-12,
+.sneat-content-bridge > .col-sm-12,
+.sneat-content-bridge > .col-xs-12 { width:100%; max-width:100%; }
+.sneat-content-bridge .page-title,
+.sneat-content-bridge .top_nav,
+.sneat-content-bridge .left_col,
+.sneat-content-bridge .nav-md,
+.sneat-content-bridge .right_col { all:unset; }
+
+.sneat-content-bridge .x_panel,
+.sneat-content-bridge .panel,
+.sneat-content-bridge .well,
+.sneat-content-bridge .sar-card {
+  background:var(--sar-surface);
+  border:0!important;
+  border-radius:var(--sar-radius)!important;
+  box-shadow:var(--sar-shadow)!important;
+  padding:1.25rem!important;
+  margin-bottom:1.5rem!important;
+  display:block;
+}
+.sneat-content-bridge .x_title,
+.sneat-content-bridge .panel-heading {
+  border-bottom:1px solid var(--sar-border-soft)!important;
+  padding:0 0 .9rem!important;
+  margin:0 0 1rem!important;
+  min-height:auto!important;
+}
+.sneat-content-bridge .x_title h2,
+.sneat-content-bridge .panel-title {
+  font-size:1.05rem!important; font-weight:600!important; margin:0!important; color:#566a7f!important;
+}
+.sneat-content-bridge .x_content,
+.sneat-content-bridge .panel-body { float:none!important; width:100%!important; clear:both!important; margin:0!important; }
+
+.sneat-content-bridge .sar-filter-card {
+  background:#fff;
+  border:1px solid #ebeef2;
+  border-radius:var(--sar-radius);
+  box-shadow:var(--sar-shadow);
+  padding:1rem;
+  margin-bottom:1.5rem;
+}
+.sneat-content-bridge .sar-filter-card .form-group { margin-bottom:.75rem; }
+
+.sneat-content-bridge .tile_count,
+.sneat-content-bridge .sar-kpi-grid {
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:1rem;
+  margin:0 0 1.5rem!important;
+}
+.sneat-content-bridge .tile_count .tile_stats_count,
+.sneat-content-bridge .sar-kpi {
+  min-width:0!important;
+  width:auto!important;
+  float:none!important;
+  background:#fff;
+  border:0!important;
+  border-radius:var(--sar-radius)!important;
+  box-shadow:var(--sar-shadow)!important;
+  padding:1rem 1.1rem!important;
+  position:relative;
+  overflow:hidden;
+}
+.sar-kpi-icon {
+  width:2.5rem; height:2.5rem; border-radius:.5rem;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:var(--sar-primary-soft); color:var(--sar-primary); font-size:1.25rem;
+  margin-bottom:.75rem;
+}
+.sneat-content-bridge .tile_count .count_top { color:#697a8d!important; font-size:.75rem!important; font-weight:500; }
+.sneat-content-bridge .tile_count .count { color:#566a7f!important; font-size:1.75rem!important; line-height:1.2; font-weight:600!important; }
+.sneat-content-bridge .tile_count .count_bottom { color:#a1acb8!important; font-size:.75rem!important; }
+
+.sneat-content-bridge label,
+.sneat-content-bridge .control-label { color:#566a7f; font-weight:500; margin-bottom:.4rem; }
+.sneat-content-bridge .form-group { margin-bottom:1rem; }
+.sneat-content-bridge .form-control,
+.sneat-content-bridge select,
+.sneat-content-bridge textarea,
+.sneat-content-bridge .select2-container .select2-selection--single,
+.sneat-content-bridge .select2-container .select2-selection--multiple {
+  border:1px solid #d9dee3!important;
+  border-radius:.375rem!important;
+  min-height:38px;
+  box-shadow:none!important;
+}
+.sneat-content-bridge .form-control:focus,
+.sneat-content-bridge select:focus,
+.sneat-content-bridge textarea:focus {
+  border-color:#696cff!important;
+  box-shadow:0 0 0 .15rem rgba(var(--sar-primary-rgb),.12)!important;
+}
+.sneat-content-bridge .input-group-addon,
+.sneat-content-bridge .input-group-text {
+  display:flex; align-items:center; padding:.4375rem .875rem;
+  border:1px solid #d9dee3; background:#fff; color:#697a8d;
+}
+.sneat-content-bridge .select2-container { width:100%!important; }
+.sneat-content-bridge .select2-container--default .select2-selection__rendered { line-height:36px!important; }
+.sneat-content-bridge .select2-container--default .select2-selection__arrow { height:36px!important; }
+
+.sneat-content-bridge .btn {
+  border-radius:.375rem!important; font-weight:500; box-shadow:none;
+  display:inline-flex; align-items:center; justify-content:center; gap:.3rem;
+}
+.sneat-content-bridge .btn:hover { transform:none!important; }
+.sneat-content-bridge .btn-xs { padding:.25rem .5rem!important; font-size:.72rem!important; }
+.sneat-content-bridge .btn-default { color:#697a8d!important; background:#fff!important; border-color:#d9dee3!important; }
+.sneat-content-bridge .btn-icon-only { width:2rem; height:2rem; padding:0!important; }
+
+.sneat-content-bridge .table-responsive {
+  width:100%; overflow-x:auto!important; -webkit-overflow-scrolling:touch; border-radius:.5rem;
+}
+.sneat-content-bridge table.table { width:100%!important; vertical-align:middle; margin-bottom:0; }
+.sneat-content-bridge table.table > thead > tr > th {
+  white-space:nowrap; color:#697a8d!important; background:#fafafa!important;
+  border-bottom:1px solid #e9ecef!important; font-size:.72rem!important;
+  text-transform:uppercase; letter-spacing:.035em; padding:.85rem .9rem!important;
+}
+.sneat-content-bridge table.table > tbody > tr > td {
+  padding:.82rem .9rem!important; border-color:#edf0f2!important; vertical-align:middle!important;
+}
+.sneat-content-bridge table.table.table-hover > tbody > tr:hover { background:#fafbff; }
+
+.sneat-content-bridge .label,
+.sneat-content-bridge .badge {
+  display:inline-flex; align-items:center; border-radius:.25rem;
+  padding:.35rem .55rem; font-size:.68rem; line-height:1; font-weight:600;
+}
+.sneat-content-bridge .label-success,.sneat-content-bridge .bg-label-success { background:#e8fadf!important; color:#56ca00!important; }
+.sneat-content-bridge .label-warning,.sneat-content-bridge .bg-label-warning { background:#fff2d6!important; color:#ffab00!important; }
+.sneat-content-bridge .label-danger,.sneat-content-bridge .bg-label-danger { background:#ffe0db!important; color:#ff3e1d!important; }
+.sneat-content-bridge .label-info,.sneat-content-bridge .bg-label-info { background:#d7f5fc!important; color:#03c3ec!important; }
+.sneat-content-bridge .label-primary,.sneat-content-bridge .bg-label-primary { background:#e7e7ff!important; color:#696cff!important; }
+.sneat-content-bridge .label-default,.sneat-content-bridge .bg-label-secondary { background:#ebeef0!important; color:#8592a3!important; }
+
+.sneat-content-bridge .alert { border:0!important; border-radius:.5rem!important; }
+.sneat-content-bridge .nav-tabs { border-bottom:1px solid #d9dee3; gap:.15rem; }
+.sneat-content-bridge .nav-tabs .nav-link { border:0!important; color:#697a8d; border-radius:.375rem .375rem 0 0; }
+.sneat-content-bridge .nav-tabs .nav-link.active { color:#696cff; border-bottom:2px solid #696cff!important; background:transparent; }
+
+.sneat-content-bridge .modal-content {
+  border:0!important; border-radius:.625rem!important; box-shadow:0 .8rem 2rem rgba(67,89,113,.2)!important;
+}
+.sneat-content-bridge .modal-header,
+.sneat-content-bridge .modal-footer { border-color:#eceef1!important; }
+
+.sneat-content-bridge .dataTables_wrapper .dataTables_filter input,
+.sneat-content-bridge .dataTables_wrapper .dataTables_length select {
+  border:1px solid #d9dee3; border-radius:.375rem; padding:.35rem .5rem;
+}
+.sneat-content-bridge .pagination { gap:.2rem; }
+.sneat-content-bridge .pagination > li > a,
+.sneat-content-bridge .pagination > li > span { border-radius:.375rem!important; border:0!important; }
+
+.sar-empty-state {
+  text-align:center; padding:2.5rem 1rem; color:#a1acb8;
+}
+.sar-empty-state i { font-size:2.25rem; color:#c4c9d0; margin-bottom:.5rem; display:block; }
+.sar-empty-state strong { display:block; color:#697a8d; margin-bottom:.2rem; }
+
+.swal2-container { z-index:20000!important; }
+.swal2-popup {
+  font-family:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  border-radius:.75rem!important; box-shadow:0 1rem 3rem rgba(67,89,113,.25)!important;
+}
+.swal2-title { color:#566a7f!important; font-size:1.3rem!important; }
+.swal2-html-container { color:#697a8d!important; font-size:.9rem!important; }
+.swal2-confirm,.swal2-cancel { border-radius:.375rem!important; box-shadow:none!important; font-weight:500!important; }
+.swal2-confirm { background:#696cff!important; }
+.swal2-cancel { background:#8592a3!important; }
+
+.content-footer { border-top:1px solid rgba(67,89,113,.06); }
+.footer-link { color:#697a8d; }
+
+.sneat-auth-legacy > .login_wrapper,
+.sneat-auth-legacy > .login,
+.sneat-auth-legacy .login_form {
+  position:static!important; width:100%!important; max-width:100%!important; margin:0!important;
+}
+.sneat-auth-legacy h1,.sneat-auth-legacy .separator { color:#566a7f; }
+
+@media (max-width:1199.98px) {
+  .layout-menu { z-index:1090; }
+  .sneat-content-bridge .tile_count,
+  .sneat-content-bridge .sar-kpi-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:767.98px) {
+  .container-p-y { padding-top:1rem!important; padding-bottom:1rem!important; }
+  .sar-page-heading h4 { font-size:1.2rem; }
+  .sneat-content-bridge .x_panel,
+  .sneat-content-bridge .panel,
+  .sneat-content-bridge .well,
+  .sneat-content-bridge .sar-card { padding:1rem!important; }
+  .sneat-content-bridge .tile_count,
+  .sneat-content-bridge .sar-kpi-grid { grid-template-columns:1fr; gap:.75rem; }
+  .sneat-content-bridge table.table { min-width:720px; }
+}
+
+
+/* =========================================================
+   029 GLOBAL CONTENT LAYOUT & SPACING STANDARD
+   ========================================================= */
+
+/* Use the full available workspace on desktop. Sneat's stock container
+   width is excellent for documentation pages but too narrow for an
+   operational command center with tables, KPI and filters. */
+.layout-page > .layout-navbar.container-xxl,
+.content-wrapper > .container-xxl,
+.content-footer > .container-xxl {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.layout-page > .layout-navbar.container-xxl {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+.content-wrapper > .container-xxl {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+.sneat-content-bridge {
+  width: 100%;
+  max-width: 100%;
+}
+
+.sneat-content-bridge > * {
+  max-width: 100%;
+}
+
+.sneat-content-bridge > .row {
+  width: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.sneat-content-bridge .sar-single-col-full {
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  left: auto !important;
+  right: auto !important;
+}
+
+.sneat-content-bridge > [class*="col-"].sar-single-col-full {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Cards should use their complete grid cell, not legacy fixed widths. */
+.sneat-content-bridge .x_panel,
+.sneat-content-bridge .panel,
+.sneat-content-bridge .well,
+.sneat-content-bridge .sar-card,
+.sneat-content-bridge .card {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.sneat-content-bridge .row.sar-layout-row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 1.5rem;
+}
+
+.sneat-content-bridge .row.sar-layout-row > [class*="col-"] {
+  min-width: 0;
+}
+
+/* Compact filter/search forms become a proper production filter bar. */
+.sneat-content-bridge form.sar-filter-card {
+  width: 100%;
+  max-width: 100%;
+  padding: 1.15rem 1.25rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.sneat-content-bridge form.sar-filter-flow {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-end !important;
+  gap: .875rem 1rem !important;
+}
+
+.sneat-content-bridge form.sar-filter-flow > .form-group,
+.sneat-content-bridge form.sar-filter-flow > .mb-2,
+.sneat-content-bridge form.sar-filter-flow > .mb-3,
+.sneat-content-bridge form.sar-filter-flow > .field,
+.sneat-content-bridge form.sar-filter-flow > label {
+  flex: 1 1 220px;
+  min-width: 180px;
+  margin-bottom: 0 !important;
+}
+
+.sneat-content-bridge form.sar-filter-flow > input:not([type="hidden"]):not([type="submit"]):not([type="button"]),
+.sneat-content-bridge form.sar-filter-flow > select,
+.sneat-content-bridge form.sar-filter-flow > textarea,
+.sneat-content-bridge form.sar-filter-flow > .select2-container {
+  flex: 1 1 220px;
+  width: auto !important;
+  min-width: 180px;
+  margin: 0 !important;
+}
+
+.sneat-content-bridge form.sar-filter-flow > button,
+.sneat-content-bridge form.sar-filter-flow > .btn,
+.sneat-content-bridge form.sar-filter-flow > input[type="submit"],
+.sneat-content-bridge form.sar-filter-flow > input[type="button"] {
+  flex: 0 0 auto;
+  width: auto !important;
+  min-width: 116px;
+  margin: 0 !important;
+  align-self: flex-end;
+}
+
+.sneat-content-bridge form.sar-filter-card > .row {
+  --bs-gutter-x: 1rem;
+  --bs-gutter-y: .875rem;
+  align-items: flex-end;
+  margin-bottom: 0;
+}
+
+.sneat-content-bridge form.sar-filter-card > .row + .row {
+  margin-top: .125rem;
+}
+
+/* Comfortable control size and clear vertical rhythm. */
+.sneat-content-bridge .form-control,
+.sneat-content-bridge select,
+.sneat-content-bridge .select2-container .select2-selection--single {
+  min-height: 42px !important;
+}
+
+.sneat-content-bridge textarea.form-control {
+  min-height: 96px !important;
+}
+
+.sneat-content-bridge .select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 40px !important;
+  padding-left: .875rem !important;
+  padding-right: 2rem !important;
+}
+
+.sneat-content-bridge .select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 40px !important;
+  right: .35rem !important;
+}
+
+.sneat-content-bridge .select2-container--default .select2-selection--multiple {
+  min-height: 42px !important;
+  padding: .2rem .35rem !important;
+}
+
+.sneat-content-bridge .select2-dropdown {
+  border-color: #d9dee3 !important;
+  border-radius: .5rem !important;
+  box-shadow: 0 .5rem 1.25rem rgba(67,89,113,.14);
+}
+
+.sneat-content-bridge .form-group,
+.sneat-content-bridge .mb-3 {
+  min-width: 0;
+}
+
+/* Buttons: consistent height and breathing room. */
+.sneat-content-bridge .btn {
+  min-height: 38px;
+  padding: .5rem .9rem !important;
+  white-space: nowrap;
+}
+
+.sneat-content-bridge .btn-sm,
+.sneat-content-bridge .btn-xs {
+  min-height: 31px;
+  padding: .34rem .6rem !important;
+}
+
+.sneat-content-bridge .btn-lg {
+  min-height: 44px;
+  padding: .65rem 1.1rem !important;
+}
+
+.sneat-content-bridge .btn + .btn {
+  margin-left: .4rem;
+}
+
+.sneat-content-bridge .btn-group .btn,
+.sneat-content-bridge .btn-group-vertical .btn,
+.sneat-content-bridge form.sar-filter-flow .btn + .btn {
+  margin-left: 0;
+}
+
+.sneat-content-bridge td .btn {
+  margin: .125rem .2rem .125rem 0;
+}
+
+.sneat-content-bridge .sar-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+}
+
+.sneat-content-bridge .sar-action-row > .btn {
+  margin: 0 !important;
+}
+
+/* KPI cards should fill the whole row. */
+.sneat-content-bridge .tile_count,
+.sneat-content-bridge .sar-kpi-grid {
+  width: 100% !important;
+  grid-template-columns: repeat(4, minmax(180px, 1fr)) !important;
+}
+
+.sneat-content-bridge .tile_count .tile_stats_count,
+.sneat-content-bridge .sar-kpi {
+  min-height: 126px;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sneat-content-bridge .tile_count .count,
+.sneat-content-bridge .sar-kpi-value {
+  margin-top: .15rem;
+}
+
+/* Tables and DataTables receive full-card width and correct spacing. */
+.sneat-content-bridge .table-responsive,
+.sneat-content-bridge .dataTables_wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.sneat-content-bridge .dataTables_wrapper > .row {
+  --bs-gutter-x: 1rem;
+  --bs-gutter-y: .75rem;
+  align-items: center;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.sneat-content-bridge .dataTables_wrapper .dataTables_length,
+.sneat-content-bridge .dataTables_wrapper .dataTables_filter {
+  margin-bottom: .75rem;
+}
+
+.sneat-content-bridge .dataTables_wrapper .dataTables_filter input {
+  min-height: 38px;
+  margin-left: .5rem;
+}
+
+.sneat-content-bridge .dataTables_wrapper .dataTables_length select {
+  min-height: 36px !important;
+  width: auto !important;
+  display: inline-block;
+  margin: 0 .35rem;
+}
+
+/* Section spacing: no glued cards, no unnecessary whitespace. */
+.sneat-content-bridge .card + .card,
+.sneat-content-bridge .sar-card + .sar-card,
+.sneat-content-bridge .x_panel + .x_panel {
+  margin-top: 1rem;
+}
+
+.sneat-content-bridge h1,
+.sneat-content-bridge h2,
+.sneat-content-bridge h3,
+.sneat-content-bridge h4,
+.sneat-content-bridge h5,
+.sneat-content-bridge h6 {
+  color: #566a7f;
+}
+
+.sneat-content-bridge .card-header,
+.sneat-content-bridge .x_title,
+.sneat-content-bridge .panel-heading {
+  min-height: auto;
+}
+
+.sneat-content-bridge .card-body {
+  min-width: 0;
+}
+
+/* Bootstrap 3 offsets carried by legacy views are neutralized only when
+   runtime marks a single-column row as safe to stretch. */
+.sneat-content-bridge .sar-single-col-full.col-md-offset-1,
+.sneat-content-bridge .sar-single-col-full.col-md-offset-2,
+.sneat-content-bridge .sar-single-col-full.col-md-offset-3,
+.sneat-content-bridge .sar-single-col-full.col-sm-offset-1,
+.sneat-content-bridge .sar-single-col-full.col-sm-offset-2,
+.sneat-content-bridge .sar-single-col-full.col-sm-offset-3 {
+  margin-left: 0 !important;
+}
+
+/* Modal content spacing. */
+.sneat-content-bridge .modal-body {
+  padding: 1.25rem !important;
+}
+
+.sneat-content-bridge .modal-footer {
+  gap: .5rem;
+  padding: 1rem 1.25rem !important;
+}
+
+.sneat-content-bridge .modal-footer .btn {
+  margin: 0 !important;
+}
+
+/* Responsive: preserve multi-column layouts where useful, stack cleanly. */
+@media (max-width: 1399.98px) {
+  .sneat-content-bridge .tile_count,
+  .sneat-content-bridge .sar-kpi-grid {
+    grid-template-columns: repeat(4, minmax(150px, 1fr)) !important;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .layout-page > .layout-navbar.container-xxl,
+  .content-wrapper > .container-xxl,
+  .content-footer > .container-xxl {
+    max-width: 100% !important;
+  }
+
+  .sneat-content-bridge .tile_count,
+  .sneat-content-bridge .sar-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .layout-page > .layout-navbar.container-xxl,
+  .content-wrapper > .container-xxl,
+  .content-footer > .container-xxl {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .sneat-content-bridge form.sar-filter-flow {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: .75rem !important;
+  }
+
+  .sneat-content-bridge form.sar-filter-flow > * {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .sneat-content-bridge form.sar-filter-flow > button,
+  .sneat-content-bridge form.sar-filter-flow > .btn,
+  .sneat-content-bridge form.sar-filter-flow > input[type="submit"],
+  .sneat-content-bridge form.sar-filter-flow > input[type="button"] {
+    width: 100% !important;
+  }
+
+  .sneat-content-bridge .tile_count,
+  .sneat-content-bridge .sar-kpi-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .sneat-content-bridge .sar-action-row {
+    align-items: stretch;
+  }
+
+  .sneat-content-bridge .sar-action-row > .btn {
+    flex: 1 1 auto;
+  }
+}
+
+
+/* =========================================================
+   030 COMMAND CENTER FULL-WIDTH FIX
+   Scope: Command Center only
+   ========================================================= */
+.sneat-content-bridge.sar-command-center-page {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.sneat-content-bridge.sar-command-center-page .sar-command-common-full {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  left: auto !important;
+  right: auto !important;
+  float: none !important;
+  box-sizing: border-box !important;
+}
+
+.sneat-content-bridge.sar-command-center-page .sar-command-common-full.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.sneat-content-bridge.sar-command-center-page .sar-command-common-full[class*="col-"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.sneat-content-bridge.sar-command-center-page .tile_count,
+.sneat-content-bridge.sar-command-center-page .sar-kpi-grid {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.sneat-content-bridge.sar-command-center-page form.sar-filter-card {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.sneat-content-bridge.sar-command-center-page .sar-command-insight-row {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .sneat-content-bridge.sar-command-center-page .tile_count,
+  .sneat-content-bridge.sar-command-center-page .sar-kpi-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+
+/* =========================================================
+   031 COMMAND CENTER WRAPPER DETECTION FIX
+   Deterministic override for the real common legacy wrapper.
+   ========================================================= */
+.sneat-content-bridge.sar-command-center-page .sar-command-common-full {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  flex-basis: 100% !important;
+  flex-grow: 1 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.sneat-content-bridge.sar-command-center-page .sar-command-common-full[style] {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+
+/* =========================================================
+   032 ELECTION CENTER FULL-WIDTH GROUP FIX
+   Scope: admin/ElectionCenter/*
+   ========================================================= */
+.sneat-content-bridge.sar-election-center-page{
+  width:100%!important;
+  max-width:none!important;
+}
+.sneat-content-bridge.sar-election-center-page .sar-election-full{
+  width:100%!important;
+  max-width:100%!important;
+  flex:0 0 100%!important;
+  flex-basis:100%!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  left:auto!important;
+  right:auto!important;
+  float:none!important;
+  box-sizing:border-box!important;
+}
+.sneat-content-bridge.sar-election-center-page .sar-election-full[class*="offset"],
+.sneat-content-bridge.sar-election-center-page .sar-election-full[class*="col-"]{
+  margin-left:0!important;
+}
+.sneat-content-bridge.sar-election-center-page .row.sar-election-row{
+  width:100%!important;
+  max-width:100%!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  --bs-gutter-x:1.5rem;
+  --bs-gutter-y:1.25rem;
+}
+.sneat-content-bridge.sar-election-center-page .sar-election-row>[class*="col-"]{
+  min-width:0;
+}
+.sneat-content-bridge.sar-election-center-page form.sar-filter-card,
+.sneat-content-bridge.sar-election-center-page .table-responsive,
+.sneat-content-bridge.sar-election-center-page .dataTables_wrapper,
+.sneat-content-bridge.sar-election-center-page .card,
+.sneat-content-bridge.sar-election-center-page .sar-card,
+.sneat-content-bridge.sar-election-center-page .x_panel,
+.sneat-content-bridge.sar-election-center-page .panel,
+.sneat-content-bridge.sar-election-center-page .nav-tabs,
+.sneat-content-bridge.sar-election-center-page .tab-content{
+  width:100%!important;
+  max-width:100%!important;
+}
+@media(max-width:767.98px){
+  .sneat-content-bridge.sar-election-center-page .sar-election-row{
+    --bs-gutter-x:1rem;
+    --bs-gutter-y:1rem;
+  }
+}
