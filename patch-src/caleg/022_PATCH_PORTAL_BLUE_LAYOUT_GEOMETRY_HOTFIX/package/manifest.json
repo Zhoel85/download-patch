@@ -1,0 +1,8 @@
+{
+  "patch_code":"022_PATCH_PORTAL_BLUE_LAYOUT_GEOMETRY_HOTFIX",
+  "patch_name":"Portal Blue Layout Geometry Hotfix",
+  "phase":"PHASE 023D-HOTFIX-2",
+  "version":"1.0.0",
+  "requires":["021_PATCH_PORTAL_BLUE_UI_STABILITY_HOTFIX"],
+  "description":"Corrects the desktop geometry introduced by Portal Blue UI: main content and top navigation now occupy the full remaining viewport beside the sidebar, without changing the working dropdown/menu behavior from patch 021."
+}
