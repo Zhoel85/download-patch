@@ -1,8 +1,0 @@
-029 SNEAT GLOBAL CONTENT LAYOUT & SPACING
-- Full-width operational workspace.
-- Safe single-column legacy grid expansion.
-- Preserved multi-column layouts.
-- Professional filter/select/button spacing.
-- Full-width cards and KPI grids.
-- DataTables, modal and action spacing normalization.
-- Responsive desktop/tablet/mobile refinements.

@@ -1,8 +1,0 @@
-{
-  "patch_code":"023_PATCH_PORTAL_BLUE_DASHBOARD_FOOTER_POLISH",
-  "patch_name":"Portal Blue Dashboard & Footer Production Polish",
-  "phase":"PHASE 023D-HOTFIX-3",
-  "version":"1.0.0",
-  "requires":["022_PATCH_PORTAL_BLUE_LAYOUT_GEOMETRY_HOTFIX"],
-  "description":"Detailed production polish after visual audit: removes residual Bootstrap offset on Command Center, corrects root Command Center page metadata, keeps sidebar full-height with internal scrolling, and integrates footer geometry/visual styling with the Portal Blue shell."
-}

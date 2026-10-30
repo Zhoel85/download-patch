@@ -1,8 +1,0 @@
-{
-  "patch_code":"030_PATCH_COMMAND_CENTER_FULL_WIDTH_FIX",
-  "patch_name":"Command Center Full Width Fix",
-  "phase":"UI-PAGE-BY-PAGE-CORRECTIVE",
-  "version":"1.0.0",
-  "requires":["029_PATCH_SNEAT_GLOBAL_CONTENT_LAYOUT_SPACING"],
-  "description":"Targeted correction for Command Center only. Detects the shared legacy parent wrapper containing filter, coverage and pending-task sections, expands only that common wrapper to the full Sneat workspace, and preserves the internal KPI and two-column insight layout. No other page is modified."
-}

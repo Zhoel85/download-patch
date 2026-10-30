@@ -1,8 +1,0 @@
-{
-  "patch_code":"027_PATCH_BACKUP_RETENTION_SNEAT_RENDER_FIX",
-  "patch_name":"Backup Retention Sneat Render Fix",
-  "phase":"OPERATIONS-HOTFIX",
-  "version":"1.0.0",
-  "requires":["026_PATCH_BACKUP_CLEANUP_RETENTION_CENTER"],
-  "description":"Corrects Backup & Retention rendering by loading the standard admin header/sidebar/footer shell so SneatTemplateHook receives a complete HTML document. No retention logic, backup selection, cleanup, database data, or routes are changed."
-}

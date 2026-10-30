@@ -1,6 +1,0 @@
-025 SNEAT LEGACY TEMPLATE DEPENDENCY-SAFE PURGE
-- Added cleanup preview and dependency scan.
-- Added protected file backup before removal.
-- Added restore operation.
-- Added Super Admin cleanup UI with CSRF and confirmation.
-- Does not delete still-referenced libraries.

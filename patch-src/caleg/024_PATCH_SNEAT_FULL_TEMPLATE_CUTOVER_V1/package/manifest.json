@@ -1,8 +1,0 @@
-{
-  "patch_code":"024_PATCH_SNEAT_FULL_TEMPLATE_CUTOVER_V1",
-  "patch_name":"Sneat v1.0.0 Full Template Cutover",
-  "phase":"TEMPLATE MIGRATION",
-  "version":"1.0.0",
-  "requires":["023_PATCH_PORTAL_BLUE_DASHBOARD_FOOTER_POLISH"],
-  "description":"Replaces the Gentelella/Portal Blue application shell at render time with the official Sneat v1.0.0 Bootstrap 5 shell, preserves CI3 business views via a compatibility bridge, migrates role-aware navigation, modernizes login layout, and provides a migration diagnostics center. Legacy template files are not deleted until Patch 025 dependency-safe purge."
-}

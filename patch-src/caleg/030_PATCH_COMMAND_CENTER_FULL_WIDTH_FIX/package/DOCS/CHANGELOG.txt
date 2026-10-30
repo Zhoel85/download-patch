@@ -1,5 +1,0 @@
-030 COMMAND CENTER FULL WIDTH FIX
-- Targeted Command Center-only layout correction.
-- Expands shared legacy parent wrapper to full Sneat workspace.
-- Preserves internal KPI and insight column structure.
-- No global page changes.

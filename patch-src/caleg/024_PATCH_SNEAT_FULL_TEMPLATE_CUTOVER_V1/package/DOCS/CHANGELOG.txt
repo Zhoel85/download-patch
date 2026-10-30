@@ -1,8 +1,0 @@
-024 SNEAT v1.0.0 FULL TEMPLATE CUTOVER
-- Official Sneat v1.0.0 assets built from ThemeSelection commit 40c50e6.
-- Replaced display shell with Sneat Bootstrap 5 structure.
-- Added role-aware legacy menu translator.
-- Added Bootstrap 3-to-5 compatibility bridge for old content views.
-- Added Sneat login wrapper.
-- Disabled Portal Blue and Gentelella template asset loading at runtime.
-- Added Sneat Migration Center for dependency-safe cleanup preparation.

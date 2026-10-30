@@ -1,7 +1,0 @@
-017 v1.0.0
-- Production navigation: 6 workflow-based groups.
-- Active Event context card.
-- Shorter production naming.
-- Legacy Admin/Role and old Quick Count removed from normal Super Admin navigation surface.
-- New Legacy / Compatibility Center.
-- No destructive deletion.

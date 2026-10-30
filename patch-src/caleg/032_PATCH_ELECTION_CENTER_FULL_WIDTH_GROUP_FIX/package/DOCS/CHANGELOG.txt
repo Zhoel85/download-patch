@@ -1,5 +1,0 @@
-032 ELECTION CENTER FULL WIDTH GROUP FIX
-- Route-specific full-width normalization for admin/ElectionCenter/*.
-- Covers Event, Kandidat & Paslon, Wilayah & Dapil, DPT/Pemilih.
-- Expands only single-column legacy wrapper chains.
-- Preserves genuine multi-column internal layouts.

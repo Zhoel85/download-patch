@@ -1,3 +1,0 @@
--- 028 SNEAT PRODUCTION UI GLOBAL STANDARD ROLLBACK
--- No database rollback required.
-SET NAMES utf8mb4;

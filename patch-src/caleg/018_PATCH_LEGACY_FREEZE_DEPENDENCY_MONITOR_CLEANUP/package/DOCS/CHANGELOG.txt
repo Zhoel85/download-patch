@@ -1,7 +1,0 @@
-018 v1.0.0
-- Legacy Dependency Monitor.
-- READ/WRITE counters.
-- Freeze history.
-- Legacy Real Count/Saksi write paths READ_ONLY.
-- Admin/Role and field-role remain MONITOR.
-- No physical dead-code deletion.

@@ -1,7 +1,0 @@
-ROLLBACK 022
-
-Rollback melalui Deployment Safety Center akan mengembalikan:
-- assets/css/campaign-portal-v2.css ke versi 021
-- application/hooks/FinalNavigationHook.php ke versi 021
-
-Tidak ada rollback database.

@@ -1,8 +1,0 @@
-{
-  "patch_code":"028_PATCH_SNEAT_PRODUCTION_UI_GLOBAL_STANDARD",
-  "patch_name":"Sneat Production UI Global Standard",
-  "phase":"UI-PRODUCTION-STANDARD",
-  "version":"1.0.0",
-  "requires":["027_PATCH_BACKUP_RETENTION_SNEAT_RENDER_FIX"],
-  "description":"Applies one production-grade Sneat UI standard globally across authenticated pages and login: navbar, sidebar/menu icons, page heading, cards, KPI, filters, forms, buttons, tables, badges, modals, Select2, empty states, responsive behavior, and centralized SweetAlert2 flash/confirmation handling. Business logic, routes, queries and permissions remain unchanged."
-}

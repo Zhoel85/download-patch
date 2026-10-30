@@ -1,8 +1,0 @@
-{
-  "patch_code": "017_PATCH_FINAL_MENU_ROLE_EXPOSURE_UX_CLEANUP",
-  "patch_name": "Final Menu, Role Exposure & UX Cleanup",
-  "phase": "PHASE 023A",
-  "version": "1.0.0",
-  "requires": ["016_PATCH_PHASE022_MOBILE_UX_PWA"],
-  "description": "Non-destructive production navigation cleanup: concise workflow-based menu, active-event context, legacy compatibility center, and role exposure cleanup without deleting legacy routes."
-}

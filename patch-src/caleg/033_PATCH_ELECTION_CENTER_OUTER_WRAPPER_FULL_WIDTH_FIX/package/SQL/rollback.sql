@@ -1,3 +1,0 @@
--- 033 ELECTION CENTER OUTER WRAPPER FULL WIDTH FIX ROLLBACK
--- No database rollback required.
-SET NAMES utf8mb4;

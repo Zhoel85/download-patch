@@ -1,8 +1,0 @@
-{
-  "patch_code":"018_PATCH_LEGACY_FREEZE_DEPENDENCY_MONITOR_CLEANUP",
-  "patch_name":"Legacy Freeze, Dependency Monitor & Safe Cleanup",
-  "phase":"PHASE 023B",
-  "version":"1.0.0",
-  "requires":["017_PATCH_FINAL_MENU_ROLE_EXPOSURE_UX_CLEANUP"],
-  "description":"Safe legacy dependency monitoring and write-freeze. No business table/controller deletion."
-}

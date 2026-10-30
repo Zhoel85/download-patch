@@ -1,8 +1,0 @@
-{
-  "patch_code":"029_PATCH_SNEAT_GLOBAL_CONTENT_LAYOUT_SPACING",
-  "patch_name":"Sneat Global Content Layout & Spacing Standard",
-  "phase":"UI-PRODUCTION-POLISH",
-  "version":"1.0.0",
-  "requires":["028_PATCH_SNEAT_PRODUCTION_UI_GLOBAL_STANDARD"],
-  "description":"Global content-layout refinement for all Sneat-rendered pages: full-width operational workspace, safe legacy single-column expansion, preserved multi-column grids, professional filter/select/button spacing, full-width cards, KPI grids, DataTables spacing, modal/action spacing, and responsive behavior. No business logic or database changes."
-}

@@ -1,8 +1,0 @@
-{
-  "patch_code":"021_PATCH_PORTAL_BLUE_UI_STABILITY_HOTFIX",
-  "patch_name":"Portal Blue UI Stability Hotfix",
-  "phase":"PHASE 023D-HOTFIX",
-  "version":"1.0.0",
-  "requires":["020_PATCH_PORTAL_BLUE_UI_SYSTEM"],
-  "description":"Corrective UI hotfix for patch 020: restores working sidebar dropdowns after dynamic menu rendering, fixes nav-md/nav-sm layout synchronization, removes duplicate legacy page titles, prevents page-level horizontal overflow, and preserves all business routes and logic."
-}
