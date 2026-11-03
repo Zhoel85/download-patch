@@ -1,0 +1,12 @@
+UAT PATCH 096
+[ ] Buka /pengguna/bsi/Elearning_rencana -> HTTP 200.
+[ ] Daftar Program Studi tampil.
+[ ] Prodi Foundation belum lengkap -> tetap terkunci.
+[ ] Prodi Foundation lengkap -> master Curriculum dapat dibuka.
+[ ] Curriculum Engine lama tetap tampil.
+[ ] RPS class route dapat dibuka jika Context Curriculum siap.
+[ ] RPS route ditolak secara terkontrol bila Foundation/Curriculum belum lengkap.
+[ ] Download/preview RPS legacy tidak HTTP 500.
+[ ] AI Curriculum buttons 095 tetap tampil pada master.
+[ ] E-Learning Dosen tidak berubah.
+[ ] Presensi/KRS/nilai tidak berubah.
