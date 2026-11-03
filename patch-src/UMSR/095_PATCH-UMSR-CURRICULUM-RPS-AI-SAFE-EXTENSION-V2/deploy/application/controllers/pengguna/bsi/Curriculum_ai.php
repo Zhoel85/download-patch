@@ -117,6 +117,32 @@ class Curriculum_ai extends CI_Controller
         return array(true, $curriculum, '');
     }
 
+    public function health()
+    {
+        if (!$this->requireBsi() || !$this->requireGet()) {
+            return;
+        }
+
+        $checks = array(
+            'prodi' => $this->db->table_exists('prodi'),
+            'foundation' => $this->db->table_exists('prodi_academic_foundation'),
+            'profil_lulusan' => $this->db->table_exists('prodi_profil_lulusan'),
+            'peo' => $this->db->table_exists('prodi_peo'),
+            'curriculum' => $this->db->table_exists('elbsi_curriculum'),
+            'curriculum_foundation' => $this->db->table_exists('elbsi_curriculum_foundation'),
+            'ai_import_audit' => $this->db->table_exists('elearning_curriculum_ai_import')
+        );
+
+        $this->output
+            ->set_content_type('application/json', 'utf-8')
+            ->set_output(json_encode(array(
+                'ok' => !in_array(false, $checks, true),
+                'patch' => '095_V2_SAFE_EXTENSION',
+                'legacy_controller_modified' => false,
+                'checks' => $checks
+            ), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+    }
+
     public function index()
     {
         if (!$this->requireBsi() || !$this->requireGet()) {
