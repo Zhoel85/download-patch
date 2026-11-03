@@ -26,46 +26,78 @@ jobs:
           if [ -z "$READY_FILE" ]; then
             READY_FILE="$(find patch-src/UMSR -name READY -type f | sort | tail -n 1)"
           fi
+
           PATCH_DIR="$(dirname "$READY_FILE")"
           PATCH_CODE="$(basename "$PATCH_DIR")"
           FILE_NAME="$PATCH_CODE.zip"
           TAG_NAME="umsr-$PATCH_CODE"
 
-          test -d "$PATCH_DIR/package"
-          test -f "$PATCH_DIR/package/manifest.json"
+          if [ -d "$PATCH_DIR/deploy" ]; then
+            BUILD_DIR="$PATCH_DIR/deploy"
+          else
+            BUILD_DIR="$PATCH_DIR/package"
+          fi
+
+          test -d "$BUILD_DIR"
 
           echo "patch_dir=$PATCH_DIR" >> "$GITHUB_OUTPUT"
+          echo "build_dir=$BUILD_DIR" >> "$GITHUB_OUTPUT"
           echo "patch_code=$PATCH_CODE" >> "$GITHUB_OUTPUT"
           echo "file_name=$FILE_NAME" >> "$GITHUB_OUTPUT"
           echo "tag_name=$TAG_NAME" >> "$GITHUB_OUTPUT"
 
-      - name: Validate package source
+      - name: Validate native portal payload
         shell: bash
         run: |
           set -euo pipefail
-          PATCH_DIR="${{ steps.meta.outputs.patch_dir }}"
-          jq -e . "$PATCH_DIR/package/manifest.json" >/dev/null
+          BUILD_DIR="${{ steps.meta.outputs.build_dir }}"
+
+          if [ -d "$BUILD_DIR/application" ]; then
+            BAD_ROOT="$(find "$BUILD_DIR" -mindepth 1 -maxdepth 1 ! -name application -printf '%f
+')"
+            if [ -n "$BAD_ROOT" ]; then
+              echo "Unsupported top-level payload entries:"
+              echo "$BAD_ROOT"
+              exit 1
+            fi
+          fi
 
           while IFS= read -r -d '' phpfile; do
             php -l "$phpfile"
-          done < <(find "$PATCH_DIR/package" -type f -name '*.php' -print0)
+          done < <(find "$BUILD_DIR" -type f -name '*.php' -print0)
+
+          while IFS= read -r -d '' sqlfile; do
+            if grep -Eiq '\b(DROP[[:space:]]+TABLE|TRUNCATE|DELETE[[:space:]]+FROM|INSERT[[:space:]]+INTO|UPDATE[[:space:]]+[A-Za-z0-9_]+[[:space:]]+SET|UNIQUE[[:space:]]+(KEY|INDEX)|FOREIGN[[:space:]]+KEY|CONSTRAINT|TRIGGER|PROCEDURE)\b' "$sqlfile"; then
+              echo "Blocked SQL token in $sqlfile"
+              exit 1
+            fi
+          done < <(find "$BUILD_DIR" -type f -name '*.sql' -print0)
 
       - name: Build and verify ZIP
         shell: bash
         run: |
           set -euo pipefail
-          PATCH_DIR="${{ steps.meta.outputs.patch_dir }}"
+          BUILD_DIR="${{ steps.meta.outputs.build_dir }}"
           FILE_NAME="${{ steps.meta.outputs.file_name }}"
 
           (
-            cd "$PATCH_DIR/package"
+            cd "$BUILD_DIR"
             zip -qr "$GITHUB_WORKSPACE/$FILE_NAME" .
           )
 
           unzip -t "$FILE_NAME"
+
+          if unzip -Z1 "$FILE_NAME" | grep -Ev '^application(/|$)' | grep -q .; then
+            echo "ZIP contains entries outside application/"
+            unzip -Z1 "$FILE_NAME"
+            exit 1
+          fi
+
           SHA256="$(sha256sum "$FILE_NAME" | awk '{print $1}')"
           echo "$SHA256  $FILE_NAME" > "$FILE_NAME.sha256"
           echo "SHA-256: $SHA256"
+          echo "ZIP entries:"
+          unzip -Z1 "$FILE_NAME"
 
       - name: Upload workflow artifact
         uses: actions/upload-artifact@v4
@@ -90,5 +122,5 @@ jobs:
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" "$FILE_NAME" "$FILE_NAME.sha256" --clobber
           else
-            gh release create "$TAG" "$FILE_NAME" "$FILE_NAME.sha256"               --title "$PATCH_CODE"               --notes "UMS Rappang patch built from repository source. PHP lint, ZIP integrity, and SHA-256 verification completed in GitHub Actions."
+            gh release create "$TAG" "$FILE_NAME" "$FILE_NAME.sha256"               --title "$PATCH_CODE"               --notes "UMS Rappang native portal patch. PHP lint, SQL guard, root-path validation, ZIP integrity, and SHA-256 verification completed in GitHub Actions."
           fi
