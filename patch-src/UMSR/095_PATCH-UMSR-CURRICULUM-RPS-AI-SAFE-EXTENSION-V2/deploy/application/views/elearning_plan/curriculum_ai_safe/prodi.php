@@ -56,7 +56,6 @@ $ready=!empty($foundation['complete']);
         <?php foreach ($curricula as $item):
           $row=$item['row']; $cur=$item['curriculum']; $cmp=$item['completion']; $bind=$item['binding'];
           $id=(int)($row['id'] ?? 0);
-          $state=$cur ? strtoupper($this->m095 ? '' : '') : '';
           $stateText=$cur ? strtoupper((string)($cur['state'] ?? $cur['status'] ?? 'DRAFT')) : 'DRAFT';
           $immutable=!empty($item['immutable']);
           $current=!empty($bind['current']);
