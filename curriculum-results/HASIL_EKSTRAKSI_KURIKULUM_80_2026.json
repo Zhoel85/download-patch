@@ -1,0 +1,1852 @@
+{
+  "schema_version": "088.1",
+  "year": 2026,
+  "title": "Kurikulum OBE 2026 - Ilmu Pemerintahan",
+  "official_reference": "Keputusan Rektor Universitas Muhammadiyah Sidenreng Rappang Nomor 630/KEP.II.3.AU/A/Rek.UMSR/2026; Buku Kurikulum OBE 2026 Program Studi Sarjana Ilmu Pemerintahan UMS Rappang Edisi Harmonisasi Profesional",
+  "foundation_ref": {
+    "id": 3,
+    "revision": 1,
+    "hash": "3405beca5b7031447979061b9bbd237e39257946c294be0a261ec6f10083f5e9",
+    "state": "ACTIVE"
+  },
+  "program_identity": {
+    "kode_prodi": "65201",
+    "nama_prodi": "Ilmu Pemerintahan",
+    "deskripsi_prodi": "Mengembangkan Keunggulan Ilmu Berbasis Smart Village, Kewirausahaan Digital dan Tata Kelola Pemerintahan Berdaya Saing Global (2045)",
+    "visi_prodi": "Mengembangkan Keunggulan Ilmu Berbasis Smart Village, Kewirausahaan Digital dan Tata Kelola Pemerintahan Berdaya Saing Global (2045)",
+    "misi_prodi": "Mengembangkan Keunggulan Ilmu Berbasis Smart Village, Kewirausahaan Digital dan Tata Kelola Pemerintahan Berdaya Saing Global (2045)",
+    "gelar_lulusan": "S.I.P"
+  },
+  "identity": {
+    "vision": "Unggul dalam pengembangan Ilmu Pemerintahan berbasis pemerintahan daerah dan desa, demokrasi lokal, serta transformasi pemerintah digital berlandaskan nilai Profesional Islami, berdampak pada pembangunan daerah, dan berorientasi global.",
+    "distinctive": "Digital Local Government, Local Democracy, dan Smart Village Governance berbasis Profesional Islami.",
+    "transversal_values": "Governmental Leadership, Integrity & AIK; Government Relations, Collaboration & Public Affairs; Research, Data & Evidence.",
+    "degree": "S1",
+    "level_kkni": 6,
+    "total_credits": 144,
+    "semesters": 8
+  },
+  "profiles": [
+    {
+      "code": "PL-01",
+      "name": "Aparatur/Pengelola Pemerintahan Jenjang Pertama",
+      "text": "Mampu menjalankan dan mengelola fungsi pemerintahan pada level awal/supervisi dengan memahami institusi, kewenangan, birokrasi, daerah/desa, pelayanan, data dan transformasi digital secara etis dan profesional Islami."
+    },
+    {
+      "code": "PL-02",
+      "name": "Analis/Konsultan Pemerintahan Jenjang Pertama",
+      "text": "Mampu menganalisis masalah pemerintahan, institusi, politik-kebijakan, desentralisasi, pembangunan dan transformasi digital serta menyusun rekomendasi berbasis bukti."
+    },
+    {
+      "code": "PL-03",
+      "name": "Penggerak Masyarakat Sipil, Demokrasi Lokal & Pemberdayaan",
+      "text": "Mampu memfasilitasi partisipasi, demokrasi lokal, advokasi, civic-tech, community governance dan pemberdayaan secara inklusif dan berbasis data."
+    },
+    {
+      "code": "PL-04",
+      "name": "Government Relations & Public Affairs Officer",
+      "text": "Mampu membangun hubungan pemerintah-dunia usaha/organisasi, memahami regulasi/proses pemerintahan, melakukan komunikasi, negosiasi dan stakeholder management serta menjaga kepatuhan dan kepentingan publik."
+    }
+  ],
+  "peo": [
+    {
+      "code": "PEO-01",
+      "text": "Dalam 3-5 tahun setelah lulus, alumni menunjukkan kinerja profesional, berintegritas dan berorientasi kepentingan publik dalam penyelenggaraan pemerintahan, pelayanan, organisasi atau urusan pemerintahan pada level awal hingga supervisi.",
+      "profiles": [
+        "PL-01"
+      ]
+    },
+    {
+      "code": "PEO-02",
+      "text": "Alumni mampu menggunakan pengetahuan Ilmu Pemerintahan, analisis institusi/politik-kebijakan dan evidence untuk memberikan rekomendasi atau solusi pada masalah pemerintahan daerah/desa, demokrasi, kelembagaan dan pembangunan.",
+      "profiles": [
+        "PL-02"
+      ]
+    },
+    {
+      "code": "PEO-03",
+      "text": "Alumni mampu memprakarsai atau mendukung transformasi Pemerintah Digital, Smart Village Governance, civic-tech, inovasi pemerintahan dan partisipasi warga yang inklusif serta berdampak.",
+      "profiles": [
+        "PL-03"
+      ]
+    },
+    {
+      "code": "PEO-04",
+      "text": "Alumni menunjukkan kepemimpinan berkemajuan, nilai Profesional Islami, kemampuan komunikasi/negosiasi/jejaring, government relations, pembelajaran sepanjang hayat dan orientasi global.",
+      "profiles": [
+        "PL-04"
+      ]
+    }
+  ],
+  "cpl": [
+    {
+      "code": "CPL-01",
+      "text": "Mampu bertindak profesional, amanah, berintegritas, bertanggung jawab, taat hukum, menghargai kemanusiaan dan keberagaman, serta menginternalisasikan nilai Al-Islam dan Kemuhammadiyahan dalam penyelenggaraan dan relasi pemerintahan.",
+      "profiles": [
+        "PL-01",
+        "PL-03",
+        "PL-04"
+      ]
+    },
+    {
+      "code": "CPL-02",
+      "text": "Mampu menguasai dan menerapkan konsep, teori, sistem, institusi, kewenangan, birokrasi dan proses governing untuk menjelaskan serta menganalisis penyelenggaraan pemerintahan secara sistematis.",
+      "profiles": [
+        "PL-01",
+        "PL-02"
+      ]
+    },
+    {
+      "code": "CPL-03",
+      "text": "Mampu menganalisis kekuasaan, aktor, institusi politik, sistem politik, demokrasi, pemilu, representasi, komunikasi politik dan dinamika sosial-politik yang memengaruhi proses pemerintahan secara kritis dan berbasis bukti.",
+      "profiles": [
+        "PL-02",
+        "PL-03"
+      ]
+    },
+    {
+      "code": "CPL-04",
+      "text": "Mampu menganalisis dan merancang penguatan pemerintahan daerah/desa, hubungan antarpemerintahan, desentralisasi, demokrasi lokal, pembangunan dan Smart Village Governance sesuai kewenangan, konteks, partisipasi dan prinsip akuntabilitas.",
+      "profiles": [
+        "PL-01",
+        "PL-02",
+        "PL-03"
+      ]
+    },
+    {
+      "code": "CPL-05",
+      "text": "Mampu menganalisis proses kebijakan dan regulasi, perencanaan pembangunan, kepentingan, implementasi, evaluasi serta implikasi hukum-kewenangan untuk menyusun alternatif/rekomendasi penyelenggaraan pemerintahan yang dapat dipertanggungjawabkan.",
+      "profiles": [
+        "PL-02",
+        "PL-04"
+      ]
+    },
+    {
+      "code": "CPL-06",
+      "text": "Mampu mengelola dan mengevaluasi birokrasi, ASN, sumber daya, keuangan, kinerja, pengawasan, akuntabilitas dan pelayanan pemerintahan secara efektif, etis, adaptif dan berorientasi pada warga.",
+      "profiles": [
+        "PL-01"
+      ]
+    },
+    {
+      "code": "CPL-07",
+      "text": "Mampu memanfaatkan data, teknologi digital dan kecerdasan artifisial secara etis untuk analitika pemerintahan, transformasi Pemerintah Digital, tata kelola data/interoperabilitas, keamanan dan privasi, Smart Village, serta partisipasi/demokrasi digital.",
+      "profiles": [
+        "PL-01",
+        "PL-02",
+        "PL-03",
+        "PL-04"
+      ]
+    },
+    {
+      "code": "CPL-08",
+      "text": "Mampu berkomunikasi, bernegosiasi, memfasilitasi partisipasi, mengelola pemangku kepentingan, membangun government relations/public affairs dan kolaborasi pemerintah-masyarakat-dunia usaha secara inklusif, etis dan berorientasi kepentingan publik.",
+      "profiles": [
+        "PL-01",
+        "PL-02",
+        "PL-03",
+        "PL-04"
+      ]
+    },
+    {
+      "code": "CPL-09",
+      "text": "Mampu menerapkan metode penelitian, statistik dan analitika data untuk menghasilkan informasi/temuan yang sahih, mengelola data secara bertanggung jawab, serta menyajikan karya ilmiah dan rekomendasi berbasis bukti secara tertulis maupun lisan.",
+      "profiles": [
+        "PL-02",
+        "PL-03"
+      ]
+    },
+    {
+      "code": "CPL-10",
+      "text": "Mampu memimpin dan mengambil keputusan, merancang serta mengimplementasikan inovasi pemerintahan, kewirausahaan sosial-digital, community/government project dan solusi kolaboratif yang menciptakan public/social value dan dampak pembangunan daerah/desa.",
+      "profiles": [
+        "PL-01",
+        "PL-03",
+        "PL-04"
+      ]
+    }
+  ],
+  "bok": [
+    {
+      "code": "BOK-1",
+      "name": "Foundations of Government Science & Institutions",
+      "text": "Konsep dan teori Ilmu Pemerintahan; sistem pemerintahan; institusi; kewenangan; birokrasi; governing; perbandingan pemerintahan.",
+      "cpl": [
+        "CPL-02"
+      ]
+    },
+    {
+      "code": "BOK-2",
+      "name": "Politics, Democracy & Representation",
+      "text": "Sistem politik; kekuasaan; demokrasi; partai; pemilu; representasi; politik lokal; komunikasi dan analisis politik pemerintahan.",
+      "cpl": [
+        "CPL-03"
+      ]
+    },
+    {
+      "code": "BOK-3",
+      "name": "Government Management & Bureaucracy",
+      "text": "Manajemen pemerintahan; birokrasi; ASN; sistem merit; keuangan; kinerja; pengawasan; pelayanan pemerintahan.",
+      "cpl": [
+        "CPL-06"
+      ]
+    },
+    {
+      "code": "BOK-4",
+      "name": "Local Government & Decentralization",
+      "text": "Pemerintahan daerah; desentralisasi; hubungan pusat-daerah; kewenangan; pembangunan daerah; intergovernmental relations.",
+      "cpl": [
+        "CPL-04",
+        "CPL-05"
+      ]
+    },
+    {
+      "code": "BOK-5",
+      "name": "Government Policy, Planning & Regulation",
+      "text": "Politik dan proses kebijakan; perencanaan; regulasi; hukum pemerintahan; evaluasi; keuangan pemerintahan.",
+      "cpl": [
+        "CPL-05",
+        "CPL-06"
+      ]
+    },
+    {
+      "code": "BOK-6",
+      "name": "Village Government & Community Governance",
+      "text": "Pemerintahan desa; demokrasi lokal; Smart Village; pemberdayaan; community governance; pembangunan lokal; partisipasi.",
+      "cpl": [
+        "CPL-04",
+        "CPL-08",
+        "CPL-10"
+      ]
+    },
+    {
+      "code": "BOK-7",
+      "name": "Digital Government, Data & Civic-Tech",
+      "text": "Pemerintah Digital; data governance; interoperability; keamanan/privasi; AI; analitika; digital democracy; civic-tech; Smart Village.",
+      "cpl": [
+        "CPL-07",
+        "CPL-09"
+      ]
+    },
+    {
+      "code": "BOK-8",
+      "name": "Government Communication, Relations & Collaboration",
+      "text": "Komunikasi pemerintahan/politik; government relations; public affairs; negosiasi; stakeholder management; collaborative governance.",
+      "cpl": [
+        "CPL-08"
+      ]
+    },
+    {
+      "code": "BOK-9",
+      "name": "Research, Analytics & Evidence",
+      "text": "Metodologi; statistik; data analytics; scientific writing; evidence-based governing; research ethics.",
+      "cpl": [
+        "CPL-09"
+      ]
+    },
+    {
+      "code": "BOK-10",
+      "name": "Leadership, Ethics, Integrity, AIK & Innovation",
+      "text": "Kepemimpinan; decision making; etika; antikorupsi; AIK; inovasi pemerintahan; kewirausahaan sosial-digital; dampak.",
+      "cpl": [
+        "CPL-01",
+        "CPL-10"
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "code": "UMSR-101",
+      "name": "Pendidikan Pancasila",
+      "sks": 2,
+      "semester": 1,
+      "group": "MKWU",
+      "prerequisites": [],
+      "bok": [
+        "BOK-10"
+      ],
+      "cpl": [
+        "CPL-01",
+        "CPL-08"
+      ],
+      "level": "I",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "UMSR-102",
+      "name": "Bahasa Indonesia",
+      "sks": 2,
+      "semester": 1,
+      "group": "MKWU",
+      "prerequisites": [],
+      "bok": [
+        "BOK-8",
+        "BOK-9"
+      ],
+      "cpl": [
+        "CPL-08",
+        "CPL-09"
+      ],
+      "level": "I",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "AIK-101",
+      "name": "AIK I: Kemanusiaan dan Keimanan",
+      "sks": 2,
+      "semester": 1,
+      "group": "AIK",
+      "prerequisites": [],
+      "bok": [
+        "BOK-10"
+      ],
+      "cpl": [
+        "CPL-01"
+      ],
+      "level": "I",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "IP-101",
+      "name": "Pengantar Ilmu Pemerintahan",
+      "sks": 3,
+      "semester": 1,
+      "group": "Inti Prodi",
+      "prerequisites": [],
+      "bok": [
+        "BOK-1"
+      ],
+      "cpl": [
+        "CPL-02",
+        "CPL-03"
+      ],
+      "level": "I",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-102",
+      "name": "Pengantar Ilmu Politik",
+      "sks": 2,
+      "semester": 1,
+      "group": "Pendukung Inti",
+      "prerequisites": [],
+      "bok": [
+        "BOK-2"
+      ],
+      "cpl": [
+        "CPL-03"
+      ],
+      "level": "I",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "IP-103",
+      "name": "Pengantar Sosiologi",
+      "sks": 2,
+      "semester": 1,
+      "group": "Pendukung Inti",
+      "prerequisites": [],
+      "bok": [
+        "BOK-2",
+        "BOK-8"
+      ],
+      "cpl": [
+        "CPL-03",
+        "CPL-08"
+      ],
+      "level": "I",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "IP-104",
+      "name": "Filsafat, Logika dan Etika Akademik",
+      "sks": 2,
+      "semester": 1,
+      "group": "Pendukung",
+      "prerequisites": [],
+      "bok": [
+        "BOK-9",
+        "BOK-10"
+      ],
+      "cpl": [
+        "CPL-01",
+        "CPL-02",
+        "CPL-09"
+      ],
+      "level": "I",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "IP-105",
+      "name": "Bahasa Inggris untuk Ilmu Pemerintahan",
+      "sks": 2,
+      "semester": 1,
+      "group": "Pendukung",
+      "prerequisites": [],
+      "bok": [
+        "BOK-8",
+        "BOK-9"
+      ],
+      "cpl": [
+        "CPL-08",
+        "CPL-09"
+      ],
+      "level": "I",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "IP-106",
+      "name": "Literasi Data, AI dan Teknologi Pemerintahan Dasar",
+      "sks": 3,
+      "semester": 1,
+      "group": "Penciri Digital",
+      "prerequisites": [],
+      "bok": [
+        "BOK-7",
+        "BOK-9"
+      ],
+      "cpl": [
+        "CPL-07",
+        "CPL-09"
+      ],
+      "level": "I",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "UMSR-201",
+      "name": "Pendidikan Kewarganegaraan",
+      "sks": 2,
+      "semester": 2,
+      "group": "MKWU",
+      "prerequisites": [],
+      "bok": [
+        "BOK-2",
+        "BOK-10"
+      ],
+      "cpl": [
+        "CPL-01",
+        "CPL-03"
+      ],
+      "level": "I/R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "AIK-202",
+      "name": "AIK II: Ibadah, Akhlak dan Muamalah",
+      "sks": 2,
+      "semester": 2,
+      "group": "AIK",
+      "prerequisites": [
+        "AIK-101"
+      ],
+      "bok": [
+        "BOK-10"
+      ],
+      "cpl": [
+        "CPL-01"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "IP-201",
+      "name": "Teori-Teori Pemerintahan",
+      "sks": 3,
+      "semester": 2,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-101"
+      ],
+      "bok": [
+        "BOK-1"
+      ],
+      "cpl": [
+        "CPL-02"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-202",
+      "name": "Sistem, Konstitusi dan Kelembagaan Pemerintahan Indonesia",
+      "sks": 3,
+      "semester": 2,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-101",
+        "IP-102"
+      ],
+      "bok": [
+        "BOK-1",
+        "BOK-2",
+        "BOK-5"
+      ],
+      "cpl": [
+        "CPL-02",
+        "CPL-03"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Institutional & Authority Map + analytical brief",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-203",
+      "name": "Birokrasi Pemerintahan",
+      "sks": 3,
+      "semester": 2,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-101"
+      ],
+      "bok": [
+        "BOK-1",
+        "BOK-3"
+      ],
+      "cpl": [
+        "CPL-02",
+        "CPL-06"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-204",
+      "name": "Hukum Pemerintahan dan Kewenangan",
+      "sks": 3,
+      "semester": 2,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-101"
+      ],
+      "bok": [
+        "BOK-4",
+        "BOK-5"
+      ],
+      "cpl": [
+        "CPL-02",
+        "CPL-04",
+        "CPL-05"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-205",
+      "name": "Statistik Sosial dan Pemerintahan",
+      "sks": 3,
+      "semester": 2,
+      "group": "Metode/Data",
+      "prerequisites": [
+        "IP-106"
+      ],
+      "bok": [
+        "BOK-9"
+      ],
+      "cpl": [
+        "CPL-09"
+      ],
+      "level": "I/R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "AIK-303",
+      "name": "AIK III: Kemuhammadiyahan",
+      "sks": 2,
+      "semester": 3,
+      "group": "AIK",
+      "prerequisites": [
+        "AIK-202"
+      ],
+      "bok": [
+        "BOK-10"
+      ],
+      "cpl": [
+        "CPL-01"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "IP-301",
+      "name": "Pemerintahan Daerah",
+      "sks": 3,
+      "semester": 3,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-201",
+        "IP-202",
+        "IP-204"
+      ],
+      "bok": [
+        "BOK-4"
+      ],
+      "cpl": [
+        "CPL-04",
+        "CPL-06"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Local Government Institutional Analysis",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-302",
+      "name": "Pemerintahan Desa dan Demokrasi Lokal",
+      "sks": 3,
+      "semester": 3,
+      "group": "Inti/Penciri",
+      "prerequisites": [
+        "IP-201",
+        "IP-102"
+      ],
+      "bok": [
+        "BOK-2",
+        "BOK-6"
+      ],
+      "cpl": [
+        "CPL-04",
+        "CPL-08"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Village Government & Local Democracy Profile",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-303",
+      "name": "Sistem Politik Indonesia",
+      "sks": 2,
+      "semester": 3,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-102",
+        "IP-202"
+      ],
+      "bok": [
+        "BOK-2"
+      ],
+      "cpl": [
+        "CPL-03"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "IP-304",
+      "name": "Metode Penelitian Ilmu Pemerintahan",
+      "sks": 3,
+      "semester": 3,
+      "group": "Metode/Riset",
+      "prerequisites": [
+        "IP-104",
+        "IP-205"
+      ],
+      "bok": [
+        "BOK-9"
+      ],
+      "cpl": [
+        "CPL-09"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-305",
+      "name": "Politik Kebijakan dan Proses Pemerintahan",
+      "sks": 3,
+      "semester": 3,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-202",
+        "IP-102"
+      ],
+      "bok": [
+        "BOK-2",
+        "BOK-5"
+      ],
+      "cpl": [
+        "CPL-03",
+        "CPL-05"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Governing Process / Politics of Policy Memo",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-306",
+      "name": "Partai Politik, Pemilu dan Representasi",
+      "sks": 2,
+      "semester": 3,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-102"
+      ],
+      "bok": [
+        "BOK-2"
+      ],
+      "cpl": [
+        "CPL-03"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Electoral Representation Analysis Brief",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "IP-307",
+      "name": "Komunikasi Pemerintahan",
+      "sks": 2,
+      "semester": 3,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "UMSR-102",
+        "IP-105"
+      ],
+      "bok": [
+        "BOK-8"
+      ],
+      "cpl": [
+        "CPL-08"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "AIK-404",
+      "name": "AIK IV: Islam dan Ilmu Pengetahuan",
+      "sks": 2,
+      "semester": 4,
+      "group": "AIK",
+      "prerequisites": [
+        "AIK-303"
+      ],
+      "bok": [
+        "BOK-10"
+      ],
+      "cpl": [
+        "CPL-01"
+      ],
+      "level": "R/M",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "IP-401",
+      "name": "Manajemen Penyelenggaraan Pemerintahan",
+      "sks": 3,
+      "semester": 4,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-203"
+      ],
+      "bok": [
+        "BOK-3"
+      ],
+      "cpl": [
+        "CPL-06"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-402",
+      "name": "Governance dan Relasi Negara-Masyarakat",
+      "sks": 3,
+      "semester": 4,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-201"
+      ],
+      "bok": [
+        "BOK-1",
+        "BOK-8"
+      ],
+      "cpl": [
+        "CPL-02",
+        "CPL-08"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-403",
+      "name": "Perencanaan Pembangunan Daerah dan Desa",
+      "sks": 3,
+      "semester": 4,
+      "group": "Inti/Penciri",
+      "prerequisites": [
+        "IP-301",
+        "IP-302"
+      ],
+      "bok": [
+        "BOK-4",
+        "BOK-5",
+        "BOK-6"
+      ],
+      "cpl": [
+        "CPL-04",
+        "CPL-05"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-404",
+      "name": "Analitika Data Pemerintahan",
+      "sks": 3,
+      "semester": 4,
+      "group": "Data/Penciri",
+      "prerequisites": [
+        "IP-205",
+        "IP-304"
+      ],
+      "bok": [
+        "BOK-7",
+        "BOK-9"
+      ],
+      "cpl": [
+        "CPL-07",
+        "CPL-09"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Government Data Dashboard + analytical note",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-405",
+      "name": "Hubungan Pusat-Daerah dan Desentralisasi",
+      "sks": 3,
+      "semester": 4,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-301",
+        "IP-204"
+      ],
+      "bok": [
+        "BOK-4",
+        "BOK-5"
+      ],
+      "cpl": [
+        "CPL-04",
+        "CPL-05"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-406",
+      "name": "Analisis Politik Pemerintahan",
+      "sks": 2,
+      "semester": 4,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-303",
+        "IP-305"
+      ],
+      "bok": [
+        "BOK-2"
+      ],
+      "cpl": [
+        "CPL-03"
+      ],
+      "level": "R/M",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "IP-407",
+      "name": "Komunikasi Politik Pemerintahan",
+      "sks": 2,
+      "semester": 4,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-307",
+        "IP-306"
+      ],
+      "bok": [
+        "BOK-2",
+        "BOK-8"
+      ],
+      "cpl": [
+        "CPL-03",
+        "CPL-08"
+      ],
+      "level": "R",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "IP-501",
+      "name": "Pemerintah Digital",
+      "sks": 3,
+      "semester": 5,
+      "group": "Penciri Digital",
+      "prerequisites": [
+        "IP-106",
+        "IP-201"
+      ],
+      "bok": [
+        "BOK-7"
+      ],
+      "cpl": [
+        "CPL-07"
+      ],
+      "level": "R/M",
+      "cpmk": [
+        {
+          "code": "CPMK-1",
+          "text": "Menjelaskan paradigma dan prinsip Pemerintah Digital.",
+          "cpl": [
+            "CPL-07"
+          ]
+        },
+        {
+          "code": "CPMK-2",
+          "text": "Menganalisis tata kelola, arsitektur, data dan risiko Pemerintah Digital.",
+          "cpl": [
+            "CPL-07"
+          ]
+        },
+        {
+          "code": "CPMK-3",
+          "text": "Mengevaluasi implementasi Pemerintah Digital pada kasus pemerintah daerah/desa.",
+          "cpl": [
+            "CPL-07"
+          ]
+        },
+        {
+          "code": "CPMK-4",
+          "text": "Merancang rencana transformasi Pemerintah Digital yang feasible dan etis.",
+          "cpl": [
+            "CPL-07"
+          ]
+        }
+      ],
+      "sub": [],
+      "signature_output": "Digital Government Transformation Plan",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-502",
+      "name": "Tata Kelola Data, Interoperabilitas dan Keamanan Digital Pemerintahan",
+      "sks": 3,
+      "semester": 5,
+      "group": "Penciri Digital",
+      "prerequisites": [
+        "IP-404",
+        "IP-501"
+      ],
+      "bok": [
+        "BOK-7"
+      ],
+      "cpl": [
+        "CPL-07",
+        "CPL-09"
+      ],
+      "level": "R/M",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Government Data Governance & Interoperability Audit",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-503",
+      "name": "Smart Village Governance dan Transformasi Pemerintahan Desa",
+      "sks": 3,
+      "semester": 5,
+      "group": "Penciri",
+      "prerequisites": [
+        "IP-302",
+        "IP-403",
+        "IP-404"
+      ],
+      "bok": [
+        "BOK-6",
+        "BOK-7"
+      ],
+      "cpl": [
+        "CPL-04",
+        "CPL-07",
+        "CPL-10"
+      ],
+      "level": "R/M",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Smart Village Government Transformation Plan",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-504",
+      "name": "Pelayanan Pemerintahan dan Citizen-Centric Service",
+      "sks": 3,
+      "semester": 5,
+      "group": "Inti/Penciri",
+      "prerequisites": [
+        "IP-203",
+        "IP-301"
+      ],
+      "bok": [
+        "BOK-3",
+        "BOK-7"
+      ],
+      "cpl": [
+        "CPL-06",
+        "CPL-07"
+      ],
+      "level": "R/M",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Citizen Journey + Government Service Improvement Design",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-505",
+      "name": "Manajemen ASN, Sistem Merit dan Talenta Publik",
+      "sks": 2,
+      "semester": 5,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-203",
+        "IP-401"
+      ],
+      "bok": [
+        "BOK-3"
+      ],
+      "cpl": [
+        "CPL-06"
+      ],
+      "level": "R/M",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "IP-506",
+      "name": "Etika, Integritas, Akuntabilitas dan Anti-Korupsi Pemerintahan",
+      "sks": 3,
+      "semester": 5,
+      "group": "Inti/AIK",
+      "prerequisites": [
+        "IP-204",
+        "AIK-303"
+      ],
+      "bok": [
+        "BOK-3",
+        "BOK-5",
+        "BOK-10"
+      ],
+      "cpl": [
+        "CPL-01",
+        "CPL-06"
+      ],
+      "level": "M",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Integrity & Accountability Control Design",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-507",
+      "name": "Perbandingan Pemerintahan",
+      "sks": 3,
+      "semester": 5,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-201",
+        "IP-303"
+      ],
+      "bok": [
+        "BOK-1",
+        "BOK-2",
+        "BOK-4"
+      ],
+      "cpl": [
+        "CPL-02",
+        "CPL-03",
+        "CPL-04"
+      ],
+      "level": "R/M",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-601",
+      "name": "Demokrasi Digital, Civic-Tech dan Partisipasi Warga",
+      "sks": 3,
+      "semester": 6,
+      "group": "Penciri Digital",
+      "prerequisites": [
+        "IP-501",
+        "IP-407"
+      ],
+      "bok": [
+        "BOK-2",
+        "BOK-7",
+        "BOK-8"
+      ],
+      "cpl": [
+        "CPL-03",
+        "CPL-07",
+        "CPL-08"
+      ],
+      "level": "M",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Digital Participation/Civic-Tech Design",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-602",
+      "name": "Kepemimpinan dan Pengambilan Keputusan Pemerintahan",
+      "sks": 3,
+      "semester": 6,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-401",
+        "IP-506"
+      ],
+      "bok": [
+        "BOK-3",
+        "BOK-10"
+      ],
+      "cpl": [
+        "CPL-01",
+        "CPL-10"
+      ],
+      "level": "M",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-603",
+      "name": "Government Relations dan Public Affairs",
+      "sks": 3,
+      "semester": 6,
+      "group": "Penciri/Profesi",
+      "prerequisites": [
+        "IP-307",
+        "IP-407"
+      ],
+      "bok": [
+        "BOK-5",
+        "BOK-8"
+      ],
+      "cpl": [
+        "CPL-05",
+        "CPL-08"
+      ],
+      "level": "M",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Stakeholder & Government Relations Strategy",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-604",
+      "name": "Community Governance dan Pemberdayaan Masyarakat Desa",
+      "sks": 3,
+      "semester": 6,
+      "group": "Penciri",
+      "prerequisites": [
+        "IP-302",
+        "IP-402"
+      ],
+      "bok": [
+        "BOK-6",
+        "BOK-8"
+      ],
+      "cpl": [
+        "CPL-04",
+        "CPL-08",
+        "CPL-10"
+      ],
+      "level": "M",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Community Governance Action Plan",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-605",
+      "name": "Keuangan Pemerintahan Daerah dan Desa",
+      "sks": 3,
+      "semester": 6,
+      "group": "Inti Prodi",
+      "prerequisites": [
+        "IP-403",
+        "IP-401"
+      ],
+      "bok": [
+        "BOK-3",
+        "BOK-5",
+        "BOK-6"
+      ],
+      "cpl": [
+        "CPL-05",
+        "CPL-06"
+      ],
+      "level": "M",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-606",
+      "name": "Inovasi Pemerintahan dan Kewirausahaan Sosial-Digital",
+      "sks": 3,
+      "semester": 6,
+      "group": "Penciri",
+      "prerequisites": [
+        "IP-501",
+        "IP-503",
+        "IP-504"
+      ],
+      "bok": [
+        "BOK-7",
+        "BOK-10"
+      ],
+      "cpl": [
+        "CPL-07",
+        "CPL-10"
+      ],
+      "level": "M",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Government/Social-Digital Innovation Prototype",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 135,
+        "active_min_percent": 60,
+        "active_min_hours": 81,
+        "non_active_max_hours": 54
+      }
+    },
+    {
+      "code": "IP-607",
+      "name": "Pemikiran Politik Pemerintahan Islam",
+      "sks": 2,
+      "semester": 6,
+      "group": "Penciri AIK",
+      "prerequisites": [
+        "AIK-303",
+        "AIK-404"
+      ],
+      "bok": [
+        "BOK-2",
+        "BOK-10"
+      ],
+      "cpl": [
+        "CPL-01",
+        "CPL-02",
+        "CPL-10"
+      ],
+      "level": "M",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "IP-701",
+      "name": "Magang / Praktik Pemerintahan",
+      "sks": 6,
+      "semester": 7,
+      "group": "Pengalaman Profesional",
+      "prerequisites": [
+        "Minimal 100 SKS"
+      ],
+      "bok": [],
+      "cpl": [
+        "CPL-01",
+        "CPL-02",
+        "CPL-04",
+        "CPL-06",
+        "CPL-07",
+        "CPL-08",
+        "CPL-10"
+      ],
+      "level": "M/A",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Professional Portfolio + Supervisor Rubric + Reflective Report",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 270,
+        "active_min_percent": 60,
+        "active_min_hours": 162,
+        "non_active_max_hours": 108
+      }
+    },
+    {
+      "code": "IP-702",
+      "name": "KKN / Smart Village Project",
+      "sks": 4,
+      "semester": 7,
+      "group": "Project/PkM",
+      "prerequisites": [
+        "IP-503"
+      ],
+      "bok": [
+        "BOK-6",
+        "BOK-7",
+        "BOK-10"
+      ],
+      "cpl": [
+        "CPL-04",
+        "CPL-07",
+        "CPL-08",
+        "CPL-10"
+      ],
+      "level": "M/A",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Village Diagnosis + Co-creation Project + Impact Note",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 180,
+        "active_min_percent": 60,
+        "active_min_hours": 108,
+        "non_active_max_hours": 72
+      }
+    },
+    {
+      "code": "IP-703",
+      "name": "Government Lab / Capstone",
+      "sks": 4,
+      "semester": 7,
+      "group": "Capstone",
+      "prerequisites": [
+        "Minimal 110 SKS",
+        "IP-404"
+      ],
+      "bok": [],
+      "cpl": [
+        "CPL-02",
+        "CPL-03",
+        "CPL-04",
+        "CPL-05",
+        "CPL-06",
+        "CPL-07",
+        "CPL-08",
+        "CPL-10"
+      ],
+      "level": "M/A",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Integrated Government Solution + Stakeholder Presentation",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 180,
+        "active_min_percent": 60,
+        "active_min_hours": 108,
+        "non_active_max_hours": 72
+      }
+    },
+    {
+      "code": "IP-704",
+      "name": "Seminar Riset, Proposal dan Penulisan Ilmiah Pemerintahan",
+      "sks": 2,
+      "semester": 7,
+      "group": "Riset",
+      "prerequisites": [
+        "IP-304",
+        "IP-404"
+      ],
+      "bok": [
+        "BOK-8",
+        "BOK-9"
+      ],
+      "cpl": [
+        "CPL-08",
+        "CPL-09"
+      ],
+      "level": "M/A",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Research Proposal + Article Draft + Seminar Evidence",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "IP-E1",
+      "name": "Mata Kuliah Pilihan",
+      "sks": 2,
+      "semester": 7,
+      "group": "Pilihan",
+      "prerequisites": [
+        "Sesuai MK"
+      ],
+      "bok": [],
+      "cpl": [],
+      "level": "R/M",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 90,
+        "active_min_percent": 60,
+        "active_min_hours": 54,
+        "non_active_max_hours": 36
+      }
+    },
+    {
+      "code": "IP-801",
+      "name": "Skripsi",
+      "sks": 6,
+      "semester": 8,
+      "group": "Tugas Akhir",
+      "prerequisites": [
+        "IP-704",
+        "syarat akademik Prodi"
+      ],
+      "bok": [
+        "BOK-9"
+      ],
+      "cpl": [
+        "CPL-02",
+        "CPL-03",
+        "CPL-04",
+        "CPL-05",
+        "CPL-07",
+        "CPL-09"
+      ],
+      "level": "M/A",
+      "cpmk": [],
+      "sub": [],
+      "signature_output": "Research Report + article/government brief derivative",
+      "assessment_blueprint": [],
+      "workload": {
+        "hours_per_sks": 45,
+        "total_hours": 270,
+        "active_min_percent": 60,
+        "active_min_hours": 162,
+        "non_active_max_hours": 108
+      }
+    }
+  ],
+  "policy": {
+    "hours_per_sks_per_semester": 45,
+    "minimum_active_student_learning_percent": 60,
+    "meetings": 16,
+    "uts_slot": 8,
+    "uas_slot": 16,
+    "new_exam_question_type": "PG_ONLY"
+  }
+}
