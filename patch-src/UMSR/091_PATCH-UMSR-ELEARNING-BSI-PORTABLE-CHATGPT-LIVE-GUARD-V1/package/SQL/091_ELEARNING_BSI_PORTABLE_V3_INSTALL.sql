@@ -1,7 +1,5 @@
 -- 091 UMSR E-Learning BSI Portable ChatGPT + Live Data Guard
--- DSC / DB Auto-Apply V2 compatible.
--- Additive-only. No INSERT/UPDATE/DELETE/DROP/TRUNCATE.
--- No UNIQUE/FK/trigger/procedure/constraint migration outside CREATE TABLE.
+-- Deployment Safety Center compatible additive schema.
 
 CREATE TABLE IF NOT EXISTS elearning_bsi_portable_batch (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
