@@ -17,6 +17,12 @@ jobs:
         with:
           fetch-depth: 2
 
+      - name: Setup PHP 7.4
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          coverage: none
+
       - name: Resolve patch
         id: meta
         shell: bash
