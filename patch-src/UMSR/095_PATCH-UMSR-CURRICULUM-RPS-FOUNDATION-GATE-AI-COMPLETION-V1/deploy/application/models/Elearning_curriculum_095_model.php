@@ -136,7 +136,8 @@ class Elearning_curriculum_095_model extends CI_Model
         if ($revisionField) {
             $this->db->order_by($revisionField, 'DESC');
         }
-        return $this->db->get('', 1)->row_array();
+        $this->db->limit(1);
+        return $this->db->get()->row_array();
     }
 
     private function childRows($table, array $foundation)
@@ -344,7 +345,12 @@ class Elearning_curriculum_095_model extends CI_Model
         if (!$cf) {
             return null;
         }
-        return $this->db->where($cf, (int) $curriculumId)->order_by('id', 'DESC')->get($table, 1)->row_array();
+        $this->db->where($cf, (int) $curriculumId);
+        $order = $this->field($table, array('id', 'updated_at', 'created_at'));
+        if ($order) {
+            $this->db->order_by($order, 'DESC');
+        }
+        return $this->db->get($table, 1)->row_array();
     }
 
     public function bindFoundation($curriculumId, array $foundationStatus)
