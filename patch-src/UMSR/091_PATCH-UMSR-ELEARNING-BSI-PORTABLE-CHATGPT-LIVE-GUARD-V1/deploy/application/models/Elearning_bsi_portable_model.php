@@ -185,7 +185,7 @@ class Elearning_bsi_portable_model extends CI_Model
         return $row ?: null;
     }
 
-    public function get_foundation_snapshotpublic function get_foundation_snapshot($kodeProdi, $idProdi = 0)
+    public function get_foundation_snapshot($kodeProdi, $idProdi = 0)
     {
         $table = 'prodi_academic_foundation';
         $row = $this->latest_active_row($table, $kodeProdi, $idProdi);
@@ -827,7 +827,7 @@ class Elearning_bsi_portable_model extends CI_Model
         return $out;
     }
 
-    private function lock_mismatchprivate function lock_mismatch(array $given, array $expected)
+    private function lock_mismatch(array $given, array $expected)
     {
         foreach (array(
             'foundation_id', 'foundation_revision', 'foundation_hash',
