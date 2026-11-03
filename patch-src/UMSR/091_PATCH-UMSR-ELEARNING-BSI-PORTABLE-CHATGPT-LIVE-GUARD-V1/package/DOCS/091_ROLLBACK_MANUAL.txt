@@ -1,0 +1,11 @@
+PATCH 091 — ROLLBACK MANUAL
+PERINGATAN: destructive SQL di bawah tidak boleh dijalankan melalui DB Auto-Apply V2.
+Gunakan hanya setelah backup dan keputusan rollback manual.
+
+DROP TABLE IF EXISTS elearning_bsi_generated_content;
+DROP TABLE IF EXISTS elearning_bsi_portable_batch;
+
+Catatan:
+- Kedua tabel hanya dimiliki PATCH 091.
+- Data operasional lama E-Learning tidak dihapus oleh rollback ini.
+- ROLLBACK_FILES mengembalikan _bsi_feature_slot.php ke kondisi kosong baseline 086.
