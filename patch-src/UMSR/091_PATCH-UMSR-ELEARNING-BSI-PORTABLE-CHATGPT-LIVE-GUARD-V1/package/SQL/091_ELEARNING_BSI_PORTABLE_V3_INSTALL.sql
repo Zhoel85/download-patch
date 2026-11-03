@@ -1,5 +1,7 @@
 -- 091 UMSR E-Learning BSI Portable ChatGPT + Live Data Guard
--- Additive-only install. Safe to run repeatedly.
+-- DSC / DB Auto-Apply V2 compatible.
+-- Additive-only. No INSERT/UPDATE/DELETE/DROP/TRUNCATE.
+-- No UNIQUE/FK/trigger/procedure/constraint migration outside CREATE TABLE.
 
 CREATE TABLE IF NOT EXISTS elearning_bsi_portable_batch (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -33,7 +35,7 @@ CREATE TABLE IF NOT EXISTS elearning_bsi_generated_content (
   created_at DATETIME NOT NULL,
   updated_at DATETIME NULL,
   PRIMARY KEY (id),
-  UNIQUE KEY uq_elb_generated_token (public_token),
+  KEY idx_elb_generated_token (public_token),
   KEY idx_elb_generated_class (id_jadwal, content_type, slot),
   KEY idx_elb_generated_batch (source_batch_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
