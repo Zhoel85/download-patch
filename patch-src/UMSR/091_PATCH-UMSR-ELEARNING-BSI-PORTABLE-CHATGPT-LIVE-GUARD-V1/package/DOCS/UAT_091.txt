@@ -1,0 +1,64 @@
+UAT PATCH 091 — E-LEARNING BSI PORTABLE CHATGPT
+
+A. UI / ROLE
+[ ] Login BSI role 17.
+[ ] Buka kelas BSI; card Persiapan Konten BSI tampil rapi.
+[ ] Tombol: Unduh Perintah, Upload JSON, Riwayat.
+[ ] Login Dosen; card BSI TIDAK muncul.
+[ ] Layout/card pertemuan Dosen tetap sama.
+
+B. DOWNLOAD PERINTAH
+[ ] Foundation Prodi ACTIVE tersedia.
+[ ] Kurikulum ACTIVE tersedia.
+[ ] RPS memiliki 16 slot.
+[ ] Klik Unduh Perintah menghasilkan TXT kelas/periode yang benar.
+[ ] TXT tidak memuat username/password/API key/data nilai/data pribadi mahasiswa.
+[ ] TXT membawa hash Foundation, Kurikulum, RPS dan week 1-16.
+
+C. VALIDASI JSON
+[ ] JSON kelas lain ditolak.
+[ ] Period berbeda ditolak.
+[ ] Hash berbeda ditolak.
+[ ] 15/17 meeting ditolak.
+[ ] Task slot 8/16 bukan null ditolak.
+[ ] Rubrik <500 karakter ditolak.
+[ ] Essay baru ditolak.
+[ ] UTS <50 PG ditolak.
+[ ] UAS <50 PG ditolak.
+[ ] Soal duplikat ditolak.
+[ ] Workload bukan SKS x 45 ditolak.
+[ ] Active learning <60% ditolak.
+[ ] Semua kegagalan terjadi sebelum runtime kelas ditulis.
+
+D. PREVIEW / LIVE GUARD
+[ ] Existing meeting tampil KEEP_EXISTING.
+[ ] Existing material tampil PROTECTED_EXISTING.
+[ ] Existing task tampil PROTECTED_EXISTING.
+[ ] Ujian yang sudah punya soal/jawaban/nilai tampil PROTECTED_EXISTING.
+[ ] Preview menunjukkan 16 pertemuan, 14 tugas, jumlah UTS/UAS, workload, active hours.
+[ ] Tidak ada mutation hanya karena membuka preview.
+
+E. APPLY
+[ ] Apply hanya bisa POST dan CSRF valid.
+[ ] Meeting kosong dibuat status draft tanpa tanggal pelaksanaan palsu.
+[ ] Material kosong dapat ditempel sebagai link internal generated content.
+[ ] Existing material tidak ditimpa.
+[ ] Tugas kosong tersimpan PREPARED dan tidak diberi deadline palsu.
+[ ] Existing tugas + submission tidak berubah.
+[ ] Quiz existing kosong dapat menerima PG.
+[ ] Quiz sudah digunakan tidak berubah; soal baru tetap PREPARED.
+[ ] Tidak ada Essay baru.
+[ ] Presensi tidak berubah.
+[ ] Submission/nilai/feedback tidak berubah.
+[ ] KRS/jadwal/pengampu tidak berubah.
+
+F. HISTORY
+[ ] Batch preview muncul di Riwayat.
+[ ] Setelah apply status menjadi APPLIED.
+[ ] Package hash dan operator tercatat.
+
+G. REGRESSION
+[ ] E-Learning Dosen normal.
+[ ] E-Learning Mahasiswa normal.
+[ ] Materi generated hanya dapat dibuka BSI, mahasiswa KRS, atau dosen pengampu.
+[ ] Download/rekap/penilaian existing tetap normal.
