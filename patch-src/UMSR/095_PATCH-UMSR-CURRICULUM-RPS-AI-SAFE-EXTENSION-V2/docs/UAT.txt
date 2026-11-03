@@ -1,0 +1,70 @@
+UAT 095 V2 SAFE EXTENSION
+===========================
+
+A. REGRESSION ZERO-TOUCH
+[ ] /pengguna/bsi/Elearning_rencana tetap HTTP 200 sebelum UAT V2
+[ ] Curriculum Engine existing tetap tampil
+[ ] RPS existing tetap tampil
+[ ] PDF/JSON RPS existing tetap normal
+[ ] E-Learning Dosen normal
+
+B. HEALTH
+[ ] /pengguna/bsi/Curriculum_ai/health HTTP 200
+[ ] patch = 095_V2_SAFE_EXTENSION
+[ ] legacy_controller_modified = false
+[ ] prodi = true
+[ ] foundation = true
+[ ] curriculum = true
+[ ] curriculum_foundation = true
+[ ] ai_import_audit = true
+
+C. FOUNDATION GATE
+[ ] Prodi belum punya Foundation ACTIVE -> TERKUNCI
+[ ] Prodi Foundation belum lengkap -> TERKUNCI + daftar kekurangan
+[ ] Prodi Foundation lengkap -> Kelola Kurikulum aktif
+
+D. VERSION SAFETY
+[ ] ACTIVE tidak dapat download/upload AI langsung
+[ ] ACTIVE hanya menawarkan Buat Revisi & Lengkapi AI
+[ ] Revisi baru berstatus DRAFT
+[ ] ACTIVE lama tidak berubah
+[ ] DRAFT harus terikat Foundation ACTIVE
+
+E. PORTABLE AI
+[ ] Unduh Perintah menghasilkan TXT
+[ ] TXT membawa Foundation lock + Curriculum hash
+[ ] PL/PEO tidak boleh dibuat oleh AI
+[ ] JSON beda Prodi ditolak
+[ ] JSON beda Curriculum ditolak
+[ ] Hash lama ditolak
+[ ] Upload hanya membuat Preview
+[ ] KEEP existing valid
+[ ] ADD untuk komponen baru
+[ ] COMPLETE untuk field kosong
+[ ] CONFLICT = KEEP_EXISTING
+
+F. APPLY
+[ ] Apply hanya POST
+[ ] Apply hanya DRAFT
+[ ] Foundation hash diperiksa ulang
+[ ] Curriculum hash diperiksa ulang
+[ ] Transaction rollback bila gagal
+[ ] Tidak ada perubahan parsial
+
+G. COMPLETENESS
+[ ] CPL diperiksa
+[ ] BOK diperiksa
+[ ] MK/CPL mapping diperiksa
+[ ] I/R/M/A diperiksa
+[ ] CPMK diperiksa
+[ ] Sub-CPMK diperiksa
+[ ] Assessment diperiksa
+[ ] Signature Output diperiksa
+[ ] Workload = SKS x 45
+[ ] Active learning >=60%
+[ ] Referensi resmi diperiksa
+[ ] RPS published count diperiksa
+
+H. FINAL REGRESSION
+[ ] /pengguna/bsi/Elearning_rencana tetap HTTP 200
+[ ] Tidak ada perubahan jadwal/KRS/presensi/nilai/submission
