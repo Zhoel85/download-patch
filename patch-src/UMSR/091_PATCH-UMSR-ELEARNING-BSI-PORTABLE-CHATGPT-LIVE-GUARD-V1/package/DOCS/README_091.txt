@@ -1,5 +1,5 @@
 PATCH 091 — UMS RAPPANG
-E-LEARNING BSI PORTABLE CHATGPT + LIVE DATA GUARD V1
+E-LEARNING BSI PORTABLE CHATGPT + LIVE DATA GUARD V1.0.1
 
 TUJUAN
 Menambahkan workflow Portable ChatGPT langsung di dalam kelas BSI tanpa mengubah
@@ -25,7 +25,7 @@ YANG DAPAT DIISI
 - Workload SKS x 45 jam; active student learning minimal 60%.
 
 LIVE DATA GUARD
-PATCH 091 tidak melakukan INSERT/UPDATE/DELETE terhadap:
+PATCH 091 tidak melakukan INSERT/UPDATE/DELETE terhadap data live berikut:
 - monitoring/presensi;
 - elearning_pengumpulan;
 - elearning_quiz_jawaban;
@@ -51,11 +51,12 @@ DEPENDENSI
 INSTALL
 1. Backup database dan application.
 2. Scan patch melalui Deployment Safety Center.
-3. Jalankan SQL/091_ELEARNING_BSI_PORTABLE_V3_INSTALL.sql bila SQL installer patch
-   tidak dijalankan otomatis oleh mekanisme deployment Anda.
-4. Pastikan SQL/091_VERIFY.sql menghasilkan PASS.
-5. Login BSI role 17.
-6. Buka satu kelas pilot dan lihat card Persiapan Konten BSI.
+3. SQL auto-apply yang aktif hanya SQL/091_ELEARNING_BSI_PORTABLE_V3_INSTALL.sql.
+4. Migration tersebut sengaja dibatasi ke CREATE TABLE IF NOT EXISTS + non-UNIQUE index.
+5. Verifikasi dan rollback SQL disediakan sebagai dokumentasi .txt agar tidak diperlakukan
+   sebagai migration oleh Deployment Safety Center.
+6. Login BSI role 17.
+7. Buka satu kelas pilot dan lihat card Persiapan Konten BSI.
 
 CATATAN UI
 Patch tidak mengubah views/dosen/elearning/kelas.php dan tidak mengubah controller
@@ -68,8 +69,11 @@ SECURITY
 - Hash Foundation/Kurikulum/RPS/week divalidasi ulang sebelum apply.
 - Paket kelas/periode lain ditolak.
 - Materi generated dilayani oleh endpoint token dan tetap memeriksa role/KRS/pengampu.
+- public_token tetap divalidasi di aplikasi; index database dibuat non-UNIQUE agar lolos
+  DB Auto-Apply V2. Token menggunakan 192-bit random sehingga collision sangat kecil.
 
-ROLLBACK
-SQL/091_ROLLBACK.sql hanya menghapus dua tabel milik patch 091.
-Jangan rollback setelah paket telah dipakai tanpa backup/audit terlebih dahulu.
-ROLLBACK_FILES mengembalikan slot BSI menjadi kosong seperti baseline 086.
+VERIFY / ROLLBACK
+- DOCS/091_VERIFY_MANUAL.txt berisi query verifikasi manual.
+- DOCS/091_ROLLBACK_MANUAL.txt berisi SQL rollback manual.
+- File tersebut sengaja .txt dan TIDAK dieksekusi otomatis oleh Deployment Safety Center.
+- ROLLBACK_FILES mengembalikan slot BSI menjadi kosong seperti baseline 086.
