@@ -1,9 +1,9 @@
-name: UMSR Patch Builder
+name: UMSR Native Patch Builder
 
 on:
   push:
     paths:
-      - 'patch-src/UMSR/**/READY'
+      - "patch-src/UMSR/**/READY"
 
 permissions:
   contents: write
@@ -12,68 +12,57 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 2
 
       - name: Resolve patch
         id: meta
         shell: bash
         run: |
           set -euo pipefail
-          READY_FILE="$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- 'patch-src/UMSR/**/READY' | head -n 1)"
+          READY_FILE="$(git diff-tree --no-commit-id --name-only -r "$GITHUB_SHA" | grep '^patch-src/UMSR/.*/READY$' | head -n 1 || true)"
           if [ -z "$READY_FILE" ]; then
-            READY_FILE="$(find patch-src/UMSR -name READY -type f | sort | tail -n 1)"
+            echo "No READY file changed in triggering commit."
+            exit 1
           fi
 
           PATCH_DIR="$(dirname "$READY_FILE")"
           PATCH_CODE="$(basename "$PATCH_DIR")"
+          BUILD_DIR="$PATCH_DIR/deploy"
           FILE_NAME="$PATCH_CODE.zip"
           TAG_NAME="umsr-$PATCH_CODE"
 
-          if [ -d "$PATCH_DIR/deploy" ]; then
-            BUILD_DIR="$PATCH_DIR/deploy"
-          else
-            BUILD_DIR="$PATCH_DIR/package"
-          fi
+          test -d "$BUILD_DIR/application"
 
-          test -d "$BUILD_DIR"
-
-          echo "patch_dir=$PATCH_DIR" >> "$GITHUB_OUTPUT"
           echo "build_dir=$BUILD_DIR" >> "$GITHUB_OUTPUT"
           echo "patch_code=$PATCH_CODE" >> "$GITHUB_OUTPUT"
           echo "file_name=$FILE_NAME" >> "$GITHUB_OUTPUT"
           echo "tag_name=$TAG_NAME" >> "$GITHUB_OUTPUT"
 
-      - name: Validate native portal payload
+      - name: Validate native payload
         shell: bash
         run: |
           set -euo pipefail
           BUILD_DIR="${{ steps.meta.outputs.build_dir }}"
 
-          if [ -d "$BUILD_DIR/application" ]; then
-            BAD_ROOT="$(find "$BUILD_DIR" -mindepth 1 -maxdepth 1 ! -name application -printf '%f
-')"
-            if [ -n "$BAD_ROOT" ]; then
-              echo "Unsupported top-level payload entries:"
-              echo "$BAD_ROOT"
-              exit 1
-            fi
-          fi
+          COUNT_ROOT="$(find "$BUILD_DIR" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')"
+          test "$COUNT_ROOT" = "1"
+          test -d "$BUILD_DIR/application"
 
           while IFS= read -r -d '' phpfile; do
             php -l "$phpfile"
-          done < <(find "$BUILD_DIR" -type f -name '*.php' -print0)
+          done < <(find "$BUILD_DIR/application" -type f -name '*.php' -print0)
 
           while IFS= read -r -d '' sqlfile; do
-            if grep -Eiq '\b(DROP[[:space:]]+TABLE|TRUNCATE|DELETE[[:space:]]+FROM|INSERT[[:space:]]+INTO|UPDATE[[:space:]]+[A-Za-z0-9_]+[[:space:]]+SET|UNIQUE[[:space:]]+(KEY|INDEX)|FOREIGN[[:space:]]+KEY|CONSTRAINT|TRIGGER|PROCEDURE)\b' "$sqlfile"; then
+            if grep -Eiq '(DROP[[:space:]]+TABLE|TRUNCATE|DELETE[[:space:]]+FROM|INSERT[[:space:]]+INTO|UPDATE[[:space:]]+[A-Za-z0-9_]+[[:space:]]+SET|UNIQUE[[:space:]]+(KEY|INDEX)|FOREIGN[[:space:]]+KEY|CONSTRAINT|TRIGGER|PROCEDURE)' "$sqlfile"; then
               echo "Blocked SQL token in $sqlfile"
               exit 1
             fi
-          done < <(find "$BUILD_DIR" -type f -name '*.sql' -print0)
+          done < <(find "$BUILD_DIR/application" -type f -name '*.sql' -print0)
 
-      - name: Build and verify ZIP
+      - name: Build ZIP
         shell: bash
         run: |
           set -euo pipefail
@@ -82,21 +71,21 @@ jobs:
 
           (
             cd "$BUILD_DIR"
-            zip -qr "$GITHUB_WORKSPACE/$FILE_NAME" .
+            zip -qr "$GITHUB_WORKSPACE/$FILE_NAME" application
           )
 
           unzip -t "$FILE_NAME"
 
-          if unzip -Z1 "$FILE_NAME" | grep -Ev '^application(/|$)' | grep -q .; then
-            echo "ZIP contains entries outside application/"
-            unzip -Z1 "$FILE_NAME"
+          OUTSIDE="$(unzip -Z1 "$FILE_NAME" | grep -Ev '^application(/|$)' || true)"
+          if [ -n "$OUTSIDE" ]; then
+            echo "ZIP contains entries outside application/:"
+            echo "$OUTSIDE"
             exit 1
           fi
 
           SHA256="$(sha256sum "$FILE_NAME" | awk '{print $1}')"
           echo "$SHA256  $FILE_NAME" > "$FILE_NAME.sha256"
           echo "SHA-256: $SHA256"
-          echo "ZIP entries:"
           unzip -Z1 "$FILE_NAME"
 
       - name: Upload workflow artifact
@@ -122,5 +111,5 @@ jobs:
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" "$FILE_NAME" "$FILE_NAME.sha256" --clobber
           else
-            gh release create "$TAG" "$FILE_NAME" "$FILE_NAME.sha256"               --title "$PATCH_CODE"               --notes "UMS Rappang native portal patch. PHP lint, SQL guard, root-path validation, ZIP integrity, and SHA-256 verification completed in GitHub Actions."
+            gh release create "$TAG" "$FILE_NAME" "$FILE_NAME.sha256" --title "$PATCH_CODE" --notes "UMS Rappang native portal patch. PHP lint, SQL guard, application-root validation, ZIP integrity, and SHA-256 checks passed."
           fi
