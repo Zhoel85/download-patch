@@ -14,7 +14,7 @@ jobs:
         with:
           php-version: "7.4"
           coverage: none
-      - name: Lint 095 files on PHP 7.4
+      - name: Lint 095 files on PHP 7.4 v2
         shell: bash
         run: |
           set -euo pipefail
