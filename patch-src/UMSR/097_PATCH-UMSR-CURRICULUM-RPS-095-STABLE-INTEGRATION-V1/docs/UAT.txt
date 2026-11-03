@@ -1,0 +1,28 @@
+UAT PATCH 097
+
+A. RECOVERY ROUTING
+[ ] /pengguna/bsi/Elearning_rencana HTTP 200
+[ ] Tidak ada HTTP 500 pada index
+[ ] Daftar Program Studi tampil
+
+B. FOUNDATION GATE
+[ ] Prodi tanpa Foundation ACTIVE tidak dapat membuka master
+[ ] Prodi Foundation belum lengkap menampilkan daftar kekurangan
+[ ] Prodi Foundation lengkap dapat membuka Curriculum Engine
+
+C. LEGACY CURRICULUM/RPS
+[ ] Versi kurikulum existing tampil
+[ ] Tab CPL/BOK/MK/I-R-M/A/CPMK/Sub-CPMK/Assessment/RPS tetap dapat dibuka
+[ ] RPS existing dapat dibuka
+[ ] PDF/JSON RPS existing tetap berfungsi
+
+D. AI CURRICULUM 095
+[ ] Card AI Curriculum Assistant muncul setelah master terbuka
+[ ] ACTIVE menawarkan Buat Revisi & Lengkapi AI
+[ ] DRAFT + Foundation terikat menawarkan Unduh Perintah/Upload JSON/Riwayat
+[ ] Preview tidak langsung menulis database
+[ ] Apply hanya pada DRAFT
+
+E. REGRESSION
+[ ] E-Learning Dosen tidak berubah
+[ ] Jadwal/KRS/presensi/nilai/submission tidak berubah
