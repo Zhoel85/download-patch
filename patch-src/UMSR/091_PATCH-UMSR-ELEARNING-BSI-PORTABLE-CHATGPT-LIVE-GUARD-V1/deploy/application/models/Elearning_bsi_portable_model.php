@@ -528,11 +528,20 @@ class Elearning_bsi_portable_model extends CI_Model
     {
         $tables = array(
             'elbsi_rps_version',
+            'elbsi_rps_versions',
+            'elbsi_rps_obe_version',
+            'elbsi_rps_obe_versions',
+            'elbsi_rps_obe',
             'elbsi_rps',
             'elearning_rps_obe_version',
+            'elearning_rps_obe_versions',
             'elearning_rps_obe',
+            'elearning_rps_version',
+            'elearning_rps_versions',
             'rps_obe_version',
-            'rps_obe'
+            'rps_obe_versions',
+            'rps_obe',
+            'rps_versions'
         );
 
         foreach ($tables as $table) {
