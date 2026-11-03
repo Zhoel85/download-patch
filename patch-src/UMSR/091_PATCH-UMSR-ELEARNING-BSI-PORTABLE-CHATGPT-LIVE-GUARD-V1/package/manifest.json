@@ -2,12 +2,12 @@
   "patch_code": "091_PATCH-UMSR-ELEARNING-BSI-PORTABLE-CHATGPT-LIVE-GUARD-V1",
   "patch_name": "E-Learning BSI Portable ChatGPT + Live Data Guard",
   "phase": "ELEARNING-BSI-PORTABLE-CONTENT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "requires": [
     "086_PATCH-UMSR-ELEARNING-BSI-SEPARATE-CONTROLLER-IDENTICAL-UI-V1",
     "087_PATCH-UMSR-CURRICULUM-ENGINE-RPS-FOUNDATION-V1",
     "089_PATCH-UMSR-PRODI-ACADEMIC-FOUNDATION-FORCE-REPAIR-CUMULATIVE-V1",
     "090_PATCH-UMSR-BSI-PRODI-ACADEMIC-FOUNDATION-MASTER-V1"
   ],
-  "description": "Adds a compact BSI-only portable ChatGPT workflow inside the existing class UI: download locked instruction, upload JSON, full preflight preview, explicit apply, history, and live-data protection. It does not alter the Dosen class UI and never overwrites attendance, submissions, grades, feedback, KRS, schedules, teachers, or real execution dates."
+  "description": "Adds the BSI-only portable ChatGPT workflow with live-data protection. V1.0.1 is Deployment Safety Center compatible: migration contains only CREATE TABLE IF NOT EXISTS and non-UNIQUE indexes; destructive rollback/verification SQL are documentation-only TXT files."
 }
