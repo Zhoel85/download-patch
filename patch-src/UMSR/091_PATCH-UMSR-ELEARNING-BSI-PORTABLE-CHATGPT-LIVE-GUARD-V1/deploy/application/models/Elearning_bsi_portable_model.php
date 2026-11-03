@@ -123,7 +123,7 @@ class Elearning_bsi_portable_model extends CI_Model
         return $row ? $this->safe_row($row) : null;
     }
 
-    private function latest_active_row($table, $codeValue)
+    private function latest_active_row($table, $codeValue, $idValue = 0, $year = '')
     {
         if (!$this->db->table_exists($table)) {
             return null;
@@ -133,20 +133,44 @@ class Elearning_bsi_portable_model extends CI_Model
             $table,
             array('kode_prodi', 'program_code', 'prodi_code')
         );
-        if (!$codeField) {
+        $prodiIdField = $this->first_existing_field(
+            $table,
+            array('id_prodi', 'prodi_id', 'program_id')
+        );
+
+        $hasCode = $codeField && trim((string)$codeValue) !== '';
+        $hasId = $prodiIdField && (int)$idValue > 0;
+        if (!$hasCode && !$hasId) {
             return null;
         }
 
-        $this->db->where($codeField, (string)$codeValue);
+        $this->db->group_start();
+        if ($hasCode) {
+            $this->db->where($codeField, (string)$codeValue);
+        }
+        if ($hasId) {
+            if ($hasCode) {
+                $this->db->or_where($prodiIdField, (int)$idValue);
+            } else {
+                $this->db->where($prodiIdField, (int)$idValue);
+            }
+        }
+        $this->db->group_end();
+
+        $yearField = $this->first_existing_field(
+            $table,
+            array('tahun', 'tahun_kurikulum', 'curriculum_year', 'year')
+        );
+        if ($yearField && trim((string)$year) !== '') {
+            $this->db->where($yearField, (string)$year);
+        }
 
         $statusField = $this->first_existing_field(
             $table,
             array('status', 'state', 'is_active')
         );
         if ($statusField) {
-            $this->db->group_start()
-                ->where_in($statusField, array('ACTIVE', 'AKTIF', 'Y', '1', 1))
-                ->group_end();
+            $this->db->where_in($statusField, array('ACTIVE', 'AKTIF', 'Y', '1', 1));
         }
 
         $revisionField = $this->first_existing_field(
@@ -161,10 +185,10 @@ class Elearning_bsi_portable_model extends CI_Model
         return $row ?: null;
     }
 
-    public function get_foundation_snapshot($kodeProdi)
+    public function get_foundation_snapshotpublic function get_foundation_snapshot($kodeProdi, $idProdi = 0)
     {
         $table = 'prodi_academic_foundation';
-        $row = $this->latest_active_row($table, $kodeProdi);
+        $row = $this->latest_active_row($table, $kodeProdi, $idProdi);
         if (!$row) {
             return array('available' => false);
         }
@@ -223,10 +247,24 @@ class Elearning_bsi_portable_model extends CI_Model
         );
     }
 
-    public function get_curriculum_snapshot($kodeProdi)
+    public function get_curriculum_snapshot($kodeProdi, $idProdi = 0, $periode = '')
     {
         $table = 'elbsi_curriculum';
-        $row = $this->latest_active_row($table, $kodeProdi);
+        $year = '';
+        if (preg_match('/^(\\d{4})/', (string)$periode, $m)) {
+            $year = $m[1];
+        }
+
+        $yearField = $this->first_existing_field(
+            $table,
+            array('tahun', 'tahun_kurikulum', 'curriculum_year', 'year')
+        );
+        $row = $this->latest_active_row(
+            $table,
+            $kodeProdi,
+            $idProdi,
+            $yearField ? $year : ''
+        );
         if (!$row) {
             return array('available' => false);
         }
@@ -415,6 +453,77 @@ class Elearning_bsi_portable_model extends CI_Model
         );
     }
 
+    private function validate_foundation_binding(array $foundation, array $curriculum)
+    {
+        if (!$this->db->table_exists('elbsi_curriculum_foundation')) {
+            return array('ok' => true, 'available' => false);
+        }
+
+        $curriculumId = isset($curriculum['id']) ? (int)$curriculum['id'] : 0;
+        $foundationId = isset($foundation['id']) ? (int)$foundation['id'] : 0;
+        if ($curriculumId <= 0 || $foundationId <= 0) {
+            return array('ok' => false, 'available' => true, 'message' => 'ID Foundation/Kurikulum tidak valid.');
+        }
+
+        $table = 'elbsi_curriculum_foundation';
+        $currField = $this->first_existing_field(
+            $table,
+            array('curriculum_id', 'id_curriculum', 'elbsi_curriculum_id')
+        );
+        $foundationField = $this->first_existing_field(
+            $table,
+            array('foundation_id', 'id_foundation', 'academic_foundation_id')
+        );
+
+        if (!$currField || !$foundationField) {
+            return array(
+                'ok' => false,
+                'available' => true,
+                'message' => 'Schema pengikatan Foundation-Kurikulum tidak dikenali.'
+            );
+        }
+
+        $orderField = $this->first_existing_field($table, array('id', 'revision', 'created_at'));
+        $this->db->where($currField, $curriculumId);
+        if ($orderField) {
+            $this->db->order_by($orderField, 'DESC');
+        }
+        $row = $this->db->get($table, 1)->row_array();
+
+        if (!$row) {
+            return array(
+                'ok' => false,
+                'available' => true,
+                'message' => 'Kurikulum belum diikat ke Foundation Prodi ACTIVE.'
+            );
+        }
+
+        if ((int)$row[$foundationField] !== $foundationId) {
+            return array(
+                'ok' => false,
+                'available' => true,
+                'message' => 'Kurikulum terikat ke revision Foundation yang berbeda.'
+            );
+        }
+
+        $hashField = $this->first_existing_field(
+            $table,
+            array('foundation_hash', 'locked_foundation_hash', 'context_hash')
+        );
+        if ($hashField
+            && !empty($row[$hashField])
+            && !empty($foundation['hash'])
+            && strtolower((string)$row[$hashField]) !== strtolower((string)$foundation['hash'])) {
+            return array(
+                'ok' => false,
+                'available' => true,
+                'message' => 'Hash Foundation pada Kurikulum tidak lagi cocok.'
+            );
+        }
+
+        return array('ok' => true, 'available' => true, 'row' => $this->safe_row($row));
+    }
+
     public function get_rps_snapshot($idJadwal, $periode)
     {
         $tables = array(
@@ -433,8 +542,7 @@ class Elearning_bsi_portable_model extends CI_Model
             }
         }
 
-        $fallback = $this->rps_from_runtime_meetings($idJadwal);
-        return $fallback ?: array('available' => false);
+        return array('available' => false);
     }
 
     public function build_locked_context($idJadwal)
@@ -445,19 +553,50 @@ class Elearning_bsi_portable_model extends CI_Model
         }
 
         $errors = array();
-        $foundation = $this->get_foundation_snapshot($class['kode_prodi']);
+        $foundation = $this->get_foundation_snapshot(
+            $class['kode_prodi'],
+            isset($class['id_prodi']) ? (int)$class['id_prodi'] : 0
+        );
         if (empty($foundation['available'])) {
             $errors[] = 'Fondasi Akademik Prodi ACTIVE belum tersedia.';
         }
 
-        $curriculum = $this->get_curriculum_snapshot($class['kode_prodi']);
+        $curriculum = $this->get_curriculum_snapshot(
+            $class['kode_prodi'],
+            isset($class['id_prodi']) ? (int)$class['id_prodi'] : 0,
+            isset($class['periode']) ? (string)$class['periode'] : ''
+        );
         if (empty($curriculum['available'])) {
             $errors[] = 'Kurikulum ACTIVE untuk Prodi ini belum tersedia.';
         }
 
+        if (!empty($foundation['available']) && !empty($curriculum['available'])) {
+            $binding = $this->validate_foundation_binding($foundation, $curriculum);
+            if (empty($binding['ok'])) {
+                $errors[] = isset($binding['message'])
+                    ? $binding['message']
+                    : 'Pengikatan Foundation-Kurikulum belum valid.';
+            }
+        }
+
         $rps = $this->get_rps_snapshot($idJadwal, (string)$class['periode']);
         if (empty($rps['available'])) {
-            $errors[] = 'RPS OBE siap dengan tepat 16 pertemuan belum tersedia.';
+            $errors[] = 'RPS OBE resmi/PUBLISHED dengan tepat 16 pertemuan belum tersedia.';
+        } elseif (!empty($curriculum['available'])
+            && !empty($rps['data']['row'])
+            && is_array($rps['data']['row'])) {
+            $rpsCurrField = null;
+            foreach (array('curriculum_id', 'id_curriculum', 'elbsi_curriculum_id') as $candidate) {
+                if (array_key_exists($candidate, $rps['data']['row'])) {
+                    $rpsCurrField = $candidate;
+                    break;
+                }
+            }
+            if ($rpsCurrField
+                && (int)$rps['data']['row'][$rpsCurrField] > 0
+                && (int)$rps['data']['row'][$rpsCurrField] !== (int)$curriculum['id']) {
+                $errors[] = 'RPS terikat ke Kurikulum yang berbeda dari Kurikulum ACTIVE kelas ini.';
+            }
         }
 
         $sks = isset($class['sks']) ? (float)$class['sks'] : 0;
@@ -609,6 +748,7 @@ class Elearning_bsi_portable_model extends CI_Model
             '- Pertemuan 8 adalah UTS dan 16 adalah UAS; task pada kedua slot harus null.',
             '- Tugas wajib pada slot 1-7 dan 9-15. Rubrik setiap tugas minimal 500 karakter Unicode.',
             '- UTS minimal 50 PG dan UAS minimal 50 PG, masing-masing satu kunci A-E yang sah.',
+            '- Format pilihan yang disarankan: options={"A":"...","B":"...","C":"...","D":"...","E":"..."}. Portal juga menerima array 4-5 item untuk kompatibilitas.',
             '- Materi harus berupa modul belajar substantif, bukan paragraf ringkas, dan memiliki sumber yang dapat ditelusuri.',
             '- Workload total semester HARUS sama dengan SKS x 45 jam.',
             '- Active student learning HARUS minimal 60% dari workload total.',
@@ -649,7 +789,36 @@ class Elearning_bsi_portable_model extends CI_Model
         return preg_replace('/\s+/', ' ', $text);
     }
 
-    private function lock_mismatch(array $given, array $expected)
+    private function normalize_options($options)
+    {
+        if (!is_array($options)) {
+            return array();
+        }
+
+        $out = array();
+        foreach (array('A', 'B', 'C', 'D', 'E') as $letter) {
+            if (array_key_exists($letter, $options)) {
+                $out[$letter] = (string)$options[$letter];
+            } elseif (array_key_exists(strtolower($letter), $options)) {
+                $out[$letter] = (string)$options[strtolower($letter)];
+            }
+        }
+
+        if ($out) {
+            return $out;
+        }
+
+        $letters = array('A', 'B', 'C', 'D', 'E');
+        foreach (array_values($options) as $index => $value) {
+            if ($index > 4) {
+                break;
+            }
+            $out[$letters[$index]] = (string)$value;
+        }
+        return $out;
+    }
+
+    private function lock_mismatchprivate function lock_mismatch(array $given, array $expected)
     {
         foreach (array(
             'foundation_id', 'foundation_revision', 'foundation_hash',
@@ -805,7 +974,7 @@ class Elearning_bsi_portable_model extends CI_Model
                     $examQuestionSeen[$normalized] = true;
                 }
 
-                $options = isset($question['options']) && is_array($question['options']) ? $question['options'] : array();
+                $options = $this->normalize_options(isset($question['options']) ? $question['options'] : array());
                 foreach (array('A', 'B', 'C', 'D') as $letter) {
                     if (trim((string)(isset($options[$letter]) ? $options[$letter] : '')) === '') {
                         $errors[] = $examName . ' soal #' . ($i + 1) . ': opsi ' . $letter . ' wajib.';
@@ -1050,11 +1219,20 @@ class Elearning_bsi_portable_model extends CI_Model
 
     private function new_token()
     {
-        try {
-            return bin2hex(random_bytes(24));
-        } catch (Exception $e) {
-            return bin2hex(openssl_random_pseudo_bytes(24));
+        for ($attempt = 0; $attempt < 5; $attempt++) {
+            try {
+                $token = bin2hex(random_bytes(24));
+            } catch (Exception $e) {
+                $token = bin2hex(openssl_random_pseudo_bytes(24));
+            }
+
+            if (!$this->db->table_exists('elearning_bsi_generated_content')
+                || $this->db->where('public_token', $token)->count_all_results('elearning_bsi_generated_content') === 0) {
+                return $token;
+            }
         }
+
+        return substr(hash('sha256', uniqid('', true) . microtime(true)), 0, 48);
     }
 
     private function save_generated($batchId, $idJadwal, $idPertemuan, $slot, $type, $title, array $content, $state)
@@ -1098,7 +1276,7 @@ class Elearning_bsi_portable_model extends CI_Model
         }
         $rows = array();
         foreach ($questions as $question) {
-            $options = isset($question['options']) && is_array($question['options']) ? $question['options'] : array();
+            $options = $this->normalize_options(isset($question['options']) ? $question['options'] : array());
             $rows[] = array(
                 'id_quiz' => (int)$idQuiz,
                 'jenis_soal' => 'PG',
@@ -1300,13 +1478,22 @@ class Elearning_bsi_portable_model extends CI_Model
         }
 
         $nip = trim((string)$this->session->userdata('nip'));
-        if ($nip !== '' && $this->db->table_exists('jadwal')) {
-            $jadwal = $this->db->where('id', $idJadwal)->get('jadwal', 1)->row_array();
-            if ($jadwal) {
-                $pattern = '/(^|[^0-9A-Za-z])' . preg_quote($nip, '/') . '($|[^0-9A-Za-z])/';
-                foreach ($jadwal as $key => $value) {
-                    if ((stripos((string)$key, 'dosen') !== false || stripos((string)$key, 'nip') !== false)
-                        && preg_match($pattern, (string)$value)) {
+        if ($nip !== '') {
+            if ($this->db->table_exists('jadwal_dosen')) {
+                $assigned = $this->db
+                    ->where('id_jadwal', $idJadwal)
+                    ->where('nip_dosen', $nip)
+                    ->count_all_results('jadwal_dosen');
+                if ($assigned > 0) {
+                    return true;
+                }
+            }
+
+            if ($this->db->table_exists('jadwal')) {
+                $jadwal = $this->db->where('id', $idJadwal)->get('jadwal', 1)->row_array();
+                if ($jadwal && isset($jadwal['dosen_list'])) {
+                    $pattern = '/(^|[^0-9A-Za-z])' . preg_quote($nip, '/') . '($|[^0-9A-Za-z])/';
+                    if (preg_match($pattern, (string)$jadwal['dosen_list'])) {
                         return true;
                     }
                 }
