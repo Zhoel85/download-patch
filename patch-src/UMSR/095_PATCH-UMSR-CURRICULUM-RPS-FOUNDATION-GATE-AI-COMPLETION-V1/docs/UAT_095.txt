@@ -1,0 +1,69 @@
+UAT PATCH 095 — CURRICULUM & RPS OBE
+
+A. FOUNDATION HARD GATE
+[ ] Login BSI role 17.
+[ ] Pilih Prodi tanpa Foundation ACTIVE -> Curriculum/RPS berhenti di Gate Akademik.
+[ ] Daftar kekurangan Foundation tampil.
+[ ] Tidak ada endpoint POST Kurikulum/RPS yang dapat melewati gate.
+[ ] Lengkapi Foundation -> reload -> Curriculum Engine dapat dibuka.
+
+B. FOUNDATION LOCK
+[ ] Pilih Kurikulum DRAFT yang belum terikat -> tombol Ikat Foundation ACTIVE tampil.
+[ ] Klik Ikat -> binding id/revision/hash tersimpan.
+[ ] Foundation berubah revision/hash -> versi DRAFT lama ditandai tidak current dan harus diikat/review kembali.
+[ ] Versi ACTIVE tidak dapat diikat/diubah langsung.
+
+C. ACTIVE -> DRAFT
+[ ] Versi ACTIVE menampilkan tombol Buat Revisi & Lengkapi AI.
+[ ] Klik -> versi DRAFT baru dibuat.
+[ ] Payload existing tersalin.
+[ ] Metadata approval/publish tidak terbawa sebagai status final.
+[ ] DRAFT baru langsung terikat ke Foundation ACTIVE.
+
+D. AI CURRICULUM
+[ ] DRAFT bound menampilkan Unduh Perintah AI, Upload JSON AI, Riwayat.
+[ ] TXT memuat Foundation locked, Kurikulum existing, gap, hash, template JSON.
+[ ] JSON Prodi lain ditolak.
+[ ] JSON Curriculum lain ditolak.
+[ ] Hash Kurikulum berubah -> ditolak.
+[ ] Hash Foundation berubah -> ditolak.
+[ ] proposed_payload berisi PL/PEO -> ditolak.
+[ ] Upload hanya membuat Preview; belum mengubah Kurikulum.
+[ ] KEEP existing dihitung.
+[ ] ADD dihitung.
+[ ] COMPLETE dihitung.
+[ ] CONFLICT tampil dan KEEP_EXISTING.
+[ ] Apply hanya DRAFT dan berjalan transactionally.
+
+E. COMPLETENESS
+[ ] CPL kosong -> belum siap.
+[ ] BOK kosong -> belum siap.
+[ ] MK tanpa SKS/semester/CPL -> belum siap.
+[ ] MK tanpa CPMK/Sub-CPMK -> belum siap.
+[ ] I/R/M/A kosong -> belum siap.
+[ ] Assessment kosong -> belum siap.
+[ ] Signature Output kosong -> belum siap.
+[ ] workload tidak sama SKS x 45 -> belum siap.
+[ ] active learning <60% -> belum siap.
+[ ] official reference kosong -> belum siap.
+
+F. RPS GATE
+[ ] Foundation lengkap tetapi Context Kurikulum belum lengkap -> RPS tidak dapat dilanjutkan.
+[ ] Setelah Context Kurikulum lengkap -> RPS existing workflow terbuka.
+[ ] RPS tetap memakai engine/QA existing.
+[ ] RPS 16 pertemuan tetap berlaku.
+[ ] PDF RPS existing tetap dapat diunduh.
+
+G. BOOK CURRICULUM
+[ ] Kurikulum lengkap tetapi RPS belum seluruh PUBLISHED -> tombol Buku Kurikulum final disabled.
+[ ] Seluruh RPS PUBLISHED -> kelengkapan 100%.
+[ ] Download Buku Kurikulum OBE aktif.
+[ ] PDF memuat Foundation, PL, PEO, CPL, BOK, MK/SKS, I/R/M/A, CPMK/Sub-CPMK, assessment, signature output, workload, evidence/PPEPP/CQI bila tersedia.
+
+H. REGRESSION
+[ ] E-Learning BSI kelas tetap normal.
+[ ] E-Learning Dosen tidak berubah.
+[ ] Data mahasiswa/KRS/presensi/nilai/submission tidak berubah.
+[ ] Kurikulum ACTIVE lama tidak dimodifikasi.
+[ ] RPS PUBLISHED lama tidak dimodifikasi.
+[ ] Role selain BSI tidak dapat memakai endpoint AI Curriculum.
