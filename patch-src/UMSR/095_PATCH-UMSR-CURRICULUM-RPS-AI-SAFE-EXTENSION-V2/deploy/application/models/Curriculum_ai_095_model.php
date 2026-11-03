@@ -824,8 +824,8 @@ class Curriculum_ai_095_model extends CI_Model
     private function mergeSafe($existing, $proposed, $path, array &$stats, array &$conflicts)
     {
         if (is_array($existing) && is_array($proposed)) {
-            $existingAssoc = array_keys($existing) !== range(0, count($existing) - 1);
-            $proposedAssoc = array_keys($proposed) !== range(0, count($proposed) - 1);
+            $existingAssoc = empty($existing) ? false : (array_keys($existing) !== range(0, count($existing) - 1));
+            $proposedAssoc = empty($proposed) ? false : (array_keys($proposed) !== range(0, count($proposed) - 1));
             if ($existingAssoc || $proposedAssoc) {
                 $out = $existing;
                 foreach ($proposed as $key => $value) {
