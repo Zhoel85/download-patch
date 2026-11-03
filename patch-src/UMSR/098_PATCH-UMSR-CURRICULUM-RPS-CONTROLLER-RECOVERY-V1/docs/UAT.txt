@@ -1,0 +1,14 @@
+UAT PATCH 098 — RECOVERY FIRST
+
+[ ] /pengguna/bsi/Elearning_rencana HTTP 200
+[ ] Daftar Program Studi tampil
+[ ] Daftar kelas/RPS tampil
+[ ] /master/{prodi} dapat dibuka
+[ ] Versi kurikulum existing tetap ada
+[ ] Tab CPL/BOK/MK/I-R-M/A/CPMK/Sub-CPMK/Assessment/RPS tetap normal
+[ ] Halaman RPS kelas dapat dibuka
+[ ] Download PDF RPS berfungsi
+[ ] Download JSON RPS berfungsi
+[ ] Tidak ada perubahan data Foundation/Kurikulum/RPS
+[ ] E-Learning Dosen tidak berubah
+[ ] KRS/Jadwal/Presensi/Nilai/Submission tidak berubah
