@@ -63,8 +63,9 @@ class Elearning_rencana extends Elearning_plan_controller
         $html = $this->load->view('templates/header', $data, true)
             . $this->load->view('templates/menu', $data, true);
 
-        if ($this->load->view('elearning_plan/_swal', $data, true) !== '') {
-            $html .= $this->load->view('elearning_plan/_swal', $data, true);
+        $swal = $this->load->view('elearning_plan/_swal', $data, true);
+        if ($swal !== '') {
+            $html .= $swal;
         }
 
         $html .= $this->load->view('elearning_plan/' . $view, $data, true)
